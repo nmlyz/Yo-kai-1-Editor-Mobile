@@ -179,3 +179,6 @@ a { color: #0a84ff; }
 .mlb { font-size: 15px; font-weight: 700; color: #fff; display: flex; flex-direction: column; gap: 1px; text-align: left; }
 .mlb small { font-size: 11px; color: #98989f; font-weight: 400; }
 .mchev { color: #63636b; font-size: 22px; font-weight: 700; }
+
+#toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 84px); transform: translateX(-50%) translateY(10px); background: rgba(30,30,36,.93); color: #fff; font-size: 13.5px; font-weight: 700; padding: 11px 20px; border-radius: 999px; box-shadow: 0 6px 20px rgba(0,0,0,.55); opacity: 0; transition: opacity .25s ease, transform .25s ease; z-index: 200; pointer-events: none; max-width: 86vw; text-align: center; }
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
