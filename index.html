@@ -5,14 +5,18 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>yw1</title>
-<link rel="stylesheet" href="style.css?v=25">
+<link rel="stylesheet" href="style.css?v=26">
 </head>
 <body>
 <div id="app">
   <header id="hdr">
-    <div id="title">yw1</div>
-    <div id="status">準備中...</div>
+    <div id="hdrMain">
+      <div id="title">yw1</div>
+      <div id="status">準備中...</div>
+    </div>
+    <button id="menuBtn" aria-label="メニュー">☰</button>
   </header>
+  <div id="backBar" hidden><button id="backBtn">‹ メインメニュー</button><span id="backTitle"></span></div>
   <div id="card">
     <div id="cardMain">
       <button id="cardName">未取得</button>
@@ -61,6 +65,6 @@
   </div>
 </div>
 <input type="file" id="filePick" accept=".bin" hidden>
-<script src="r.js?v=25"></script>
+<script src="r.js?v=26"></script>
 </body>
 </html>
