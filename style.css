@@ -116,3 +116,9 @@ a { color: #0a84ff; }
 .mring2 img { width: 100%; height: 100%; display: block; }
 .medal.off .mring2 img { filter: grayscale(1); opacity: 0.45; }
 .medal.sel .mring2 { outline: 2.5px dashed #ffd60a; outline-offset: 2px; }
+
+.medal2 { position: relative; width: 52px; height: 52px; display: block; border-radius: 50%; background: conic-gradient(from 210deg, #f4f4f8, #8f8f99, #e8e8ee, #76767f, #f4f4f8); box-shadow: 0 2px 5px rgba(0,0,0,.5); }
+.mseg { position: absolute; left: 3px; top: 3px; width: 46px; height: 46px; border-radius: 50%; }
+.mart { position: absolute; left: 7px; top: 7px; width: 38px; height: 38px; border-radius: 50%; object-fit: cover; display: block; }
+.medal.off .mart { filter: grayscale(1); opacity: 0.45; }
+.medal.sel .medal2 { outline: 2.5px dashed #ffd60a; outline-offset: 2px; }
