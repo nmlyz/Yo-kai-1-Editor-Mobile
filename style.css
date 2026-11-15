@@ -132,7 +132,7 @@ a { color: #0a84ff; }
 .bookovl { position: fixed; inset: 0; z-index: 80; background: #0e0e12; display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 8px) 8px calc(env(safe-area-inset-bottom, 0px) + 10px); }
 .bookovl .bspread { flex: 1; min-height: 0; }
 .bhead { display: flex; align-items: center; gap: 8px; padding: 0 2px 8px; }
-.btitle { flex: 1; font-weight: 700; font-size: 15px; }
+.btitle { flex: 1; font-weight: 700; font-size: 15px; color: #fff; }
 .bclose { background: #2c2c33; color: #fff; border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 15px; flex: none; }
 .bbtn { background: #2c2c33; color: #7ee787; border: none; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 700; flex: none; }
 .bsearch { margin: 0 0 8px; background: #1c1c22; border: 1px solid #33333c; border-radius: 10px; color: #fff; padding: 9px 12px; font-size: 14px; width: 100%; box-sizing: border-box; }
