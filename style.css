@@ -138,3 +138,15 @@ a { color: #0a84ff; }
 .bsearch { margin: 0 0 8px; background: #1c1c22; border: 1px solid #33333c; border-radius: 10px; color: #fff; padding: 9px 12px; font-size: 14px; width: 100%; box-sizing: border-box; }
 .bookovl .bookinfo { margin-top: 10px; }
 .bookovl .pager { margin-top: 10px; }
+
+.ccenter { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #98989f; font-size: 12px; font-weight: 700; text-align: center; line-height: 1.5; }
+.cslot { position: absolute; transform: translate(-50%, -50%); background: none; border: 0; color: #fff; display: flex; flex-direction: column; align-items: center; gap: 1px; cursor: pointer; font-family: inherit; width: 78px; padding: 0; }
+.csicon { width: 58px; height: 58px; border-radius: 50%; border: 4px solid #8e8e93; background: #1c1c22; display: block; overflow: hidden; flex: none; }
+.csicon img { width: 100%; height: 100%; object-fit: cover; }
+.csname { font-size: 10.5px; font-weight: 700; max-width: 78px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cslv { font-size: 9.5px; color: #98989f; }
+.cslot.empty { color: #636368; font-size: 11px; cursor: default; justify-content: center; height: 58px; }
+.limrow { display: flex; align-items: center; justify-content: space-between; background: #1c1c22; border-radius: 12px; padding: 12px 14px; margin-top: 14px; font-weight: 700; font-size: 14px; color: #fff; }
+.limbtn { border: 0; border-radius: 16px; width: 64px; height: 32px; font-weight: 700; font-size: 13px; background: #3a3a3f; color: #98989f; cursor: pointer; font-family: inherit; flex: none; }
+.limbtn.on { background: #ff453a; color: #fff; }
+.limnote { color: #98989f; font-size: 11.5px; margin-top: 6px; text-align: center; }
