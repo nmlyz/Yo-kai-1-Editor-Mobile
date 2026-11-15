@@ -144,13 +144,6 @@ a { color: #0a84ff; }
 .bookovl .bookinfo { margin-top: 10px; }
 .bookovl .pager { margin-top: 10px; }
 
-.ccenter { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #98989f; font-size: 12px; font-weight: 700; text-align: center; line-height: 1.5; }
-.cslot { position: absolute; transform: translate(-50%, -50%); background: none; border: 0; color: #fff; display: flex; flex-direction: column; align-items: center; gap: 1px; cursor: pointer; font-family: inherit; width: 78px; padding: 0; }
-.csicon { width: 58px; height: 58px; border-radius: 50%; border: 4px solid #8e8e93; background: #1c1c22; display: block; overflow: hidden; flex: none; }
-.csicon img { width: 100%; height: 100%; object-fit: cover; }
-.csname { font-size: 10.5px; font-weight: 700; max-width: 78px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.cslv { font-size: 9.5px; color: #98989f; }
-.cslot.empty { color: #636368; font-size: 11px; cursor: default; justify-content: center; height: 58px; }
 .limrow { display: flex; align-items: center; justify-content: space-between; background: #1c1c22; border-radius: 12px; padding: 12px 14px; margin-top: 14px; font-weight: 700; font-size: 14px; color: #fff; }
 .limbtn { border: 0; border-radius: 16px; width: 64px; height: 32px; font-weight: 700; font-size: 13px; background: #3a3a3f; color: #98989f; cursor: pointer; font-family: inherit; flex: none; }
 .limbtn.on { background: #ff453a; color: #fff; }
@@ -158,7 +151,6 @@ a { color: #0a84ff; }
 
 .rows { display: flex; flex-direction: column; gap: 6px; flex: none; }
 .lpg { margin-top: auto; flex: none; }
-.cstage { width: min(94vw, 50dvh); }
 .yoktb { margin-top: 0; align-items: center; }
 .yoktb button { flex: 1; white-space: nowrap; font-size: 11.5px; padding: 8px 2px; }
 .yoktb button.bk { flex: none; padding: 8px 16px; font-size: 12.5px; }
@@ -182,3 +174,17 @@ a { color: #0a84ff; }
 
 #toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 84px); transform: translateX(-50%) translateY(10px); background: rgba(30,30,36,.93); color: #fff; font-size: 13.5px; font-weight: 700; padding: 11px 20px; border-radius: 999px; box-shadow: 0 6px 20px rgba(0,0,0,.55); opacity: 0; transition: opacity .25s ease, transform .25s ease; z-index: 200; pointer-events: none; max-width: 86vw; text-align: center; }
 #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.pstage { position: relative; width: min(96vw, 430px); aspect-ratio: 1.04; margin: 8px auto 4px; border-radius: 26px; background: radial-gradient(circle at 18% 12%, rgba(255,255,255,.5), rgba(255,255,255,0) 42%), radial-gradient(rgba(255,255,255,.28) 2.2px, transparent 2.6px) 0 0/26px 26px, linear-gradient(180deg, #a8e2ff 0%, #5db6f5 55%, #2f8fe8 100%); border: 3px solid #e6f7ff; box-shadow: 0 6px 18px rgba(0,40,90,.45), inset 0 2px 0 rgba(255,255,255,.7); overflow: hidden; }
+.ptitle { position: absolute; top: 8px; left: 0; right: 0; text-align: center; font-size: 21px; font-weight: 800; color: #ffdf3d; font-family: "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", "Hiragino Sans", sans-serif; text-shadow: -2px 0 0 #402a12, 2px 0 0 #402a12, 0 -2px 0 #402a12, 0 2px 0 #402a12, -2px -2px 0 #402a12, 2px -2px 0 #402a12, -2px 2px 0 #402a12, 2px 2px 0 #402a12, 0 4px 5px rgba(0,0,0,.35); }
+.pcenter { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); width: 27%; aspect-ratio: 1.25; background: radial-gradient(ellipse at 50% 38%, #3d4b66, #141c2e 75%); border: 3px solid #d8b34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,40,90,.5); }
+.pcenter img { width: 62%; display: block; }
+.pslot { position: absolute; width: 32%; display: flex; align-items: center; gap: 5px; background: linear-gradient(180deg, #fffbe8, #ffe873); border: 2px solid #e8a91c; border-radius: 999px; padding: 4px 8px 4px 4px; box-shadow: 0 2px 6px rgba(0,60,120,.4); text-align: left; font-family: inherit; cursor: pointer; }
+.pslot.empty { justify-content: center; color: #8a6d1f; font-size: 12px; font-weight: 700; background: linear-gradient(180deg, #f4f4f4, #d9d9d9); border-color: #a8a8a8; color: #777; min-height: 48px; }
+.psicon { flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%; border: 2.5px solid #8e8e93; background: #fff; overflow: hidden; display: block; }
+.psicon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.psinfo { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.psname { font-size: 11.5px; font-weight: 800; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.psrow { display: flex; align-items: center; gap: 5px; }
+.pslv { background: #2f9df4; color: #fff; font-size: 9.5px; font-weight: 800; border-radius: 999px; padding: 1px 6px; }
+.pshp { font-size: 10.5px; font-weight: 800; color: #333; }
