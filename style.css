@@ -24,7 +24,7 @@ body { background: #0b0b0e; color: #fff; font-family: -apple-system, "Hiragino S
 .toolbar button { background: #2c2c2e; color: #fff; border: 0; border-radius: 10px; font-size: 12.5px; padding: 8px 10px; cursor: pointer; }
 #searchWrap { margin-top: 10px; }
 #searchBox { width: 100%; background: #1c1c22; border: 1px solid #33333c; border-radius: 10px; color: #fff; font-size: 16px; padding: 9px 12px; }
-#list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; flex: 1; min-height: 0; overflow: hidden; }
+#list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
 .row { background: #17171c; border-radius: 12px; height: 54px; flex: none; padding: 0 12px; display: flex; align-items: center; gap: 10px; cursor: pointer; border: 0; width: 100%; text-align: left; color: #fff; font-size: 15px; }
 .row.static { cursor: default; }
 .row img.ic { width: 40px; height: 40px; object-fit: contain; flex: none; }
@@ -151,10 +151,7 @@ a { color: #0a84ff; }
 .limbtn.on { background: #ff453a; color: #fff; }
 .limnote { color: #98989f; font-size: 11.5px; margin-top: 6px; text-align: center; }
 
-.rows { display: flex; flex-direction: column; gap: 6px; overflow: hidden; flex: none; }
-.rows.compact .row { height: 44px; }
-.rows.compact .row img.ic { width: 32px; height: 32px; }
-.rows.compact .row img.ic.sm { width: 26px; height: 26px; }
+.rows { display: flex; flex-direction: column; gap: 6px; flex: none; }
 .lpg { margin-top: auto; flex: none; }
 .cstage { width: min(94vw, 50dvh); }
 .yoktb { margin-top: 0; align-items: center; }
