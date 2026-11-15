@@ -165,9 +165,17 @@ a { color: #0a84ff; }
 .tbtitle { flex: 1; font-size: 12.5px; color: #98989f; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mpsearch { flex: 1; min-width: 0; background: #1c1c22; border: 1px solid #33333c; border-radius: 10px; color: #fff; padding: 8px 10px; font-size: 16px; font-family: inherit; }
 
-.mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 10px; padding: 10px 4px 4px; }
+.mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 10px; padding: 10px 4px 4px; }
 .mtile { background: none; border: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; font-family: inherit; padding: 0; }
-.mtimg { position: relative; display: block; }
-.mtimg img { width: 78px; height: 78px; display: block; border-radius: 20px; box-shadow: 0 3px 10px rgba(0,0,0,.5); }
+.mtimg { position: relative; display: block; width: 100%; }
+.mtimg img { width: 100%; aspect-ratio: 1; display: block; border-radius: 22px; box-shadow: 0 3px 10px rgba(0,0,0,.5); }
 .mdot { position: absolute; right: -3px; top: -3px; width: 15px; height: 15px; border-radius: 50%; background: #ff453a; border: 2px solid #0b0b0e; }
-.mtlb { font-size: 12.5px; font-weight: 700; color: #fff; }
+.mtlb { position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-size: 13.5px; font-weight: 800; color: #ffdf3d; font-family: "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", "Hiragino Sans", sans-serif; letter-spacing: .02em; text-shadow: -1.5px 0 0 #402a12, 1.5px 0 0 #402a12, 0 -1.5px 0 #402a12, 0 1.5px 0 #402a12, -1.5px -1.5px 0 #402a12, 1.5px -1.5px 0 #402a12, -1.5px 1.5px 0 #402a12, 1.5px 1.5px 0 #402a12, 0 3px 4px rgba(0,0,0,.4); pointer-events: none; }
+.mtimg.puni { background: radial-gradient(circle at 50% 32%, #cdefff, #57b6f2); border-radius: 22px; box-shadow: 0 3px 10px rgba(0,0,0,.5); }
+.mtimg.puni img { box-shadow: none; object-fit: contain; padding: 7px; box-sizing: border-box; }
+.menulist { margin: -4px 0; }
+.mrow { display: flex; align-items: center; justify-content: space-between; padding: 13px 4px; border-bottom: 1px solid #33333c; cursor: pointer; }
+.mrow:last-child { border-bottom: 0; }
+.mlb { font-size: 15px; font-weight: 700; color: #fff; display: flex; flex-direction: column; gap: 1px; text-align: left; }
+.mlb small { font-size: 11px; color: #98989f; font-weight: 400; }
+.mchev { color: #63636b; font-size: 22px; font-weight: 700; }
