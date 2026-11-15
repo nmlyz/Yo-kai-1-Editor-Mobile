@@ -38,7 +38,7 @@ body { background: #0b0b0e; color: #fff; font-family: -apple-system, "Hiragino S
 .sect { font-size: 12px; color: #98989f; margin: 8px 2px 0; }
 #foot { font-size: 11px; color: #63636b; text-align: center; margin-top: 16px; }
 [hidden] { display: none !important; }
-#modalWrap { position: fixed; inset: 0; background: rgba(0,0,0,.6); display: flex; align-items: center; justify-content: center; padding: 18px; z-index: 50; }
+#modalWrap { position: fixed; inset: 0; background: rgba(0,0,0,.6); display: flex; align-items: center; justify-content: center; padding: 18px; z-index: 120; }
 #modalCard { background: #1e1e24; border-radius: 16px; padding: 18px; width: 100%; max-width: 420px; max-height: 86vh; overflow-y: auto; }
 #modalTitle { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
 #modalBody { font-size: 13.5px; color: #e5e5ea; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
@@ -84,8 +84,8 @@ a { color: #0a84ff; }
 .bspread.flip-prev { transform-origin: center; animation: flipPrev .38s ease; }
 @keyframes flipNext { from { transform: rotateY(-46deg); opacity: .2; } to { transform: rotateY(0deg); opacity: 1; } }
 @keyframes flipPrev { from { transform: rotateY(46deg); opacity: .2; } to { transform: rotateY(0deg); opacity: 1; } }
-.bpage { flex: 1; background: linear-gradient(#26262e, #1d1d24); border-radius: 10px; padding: 12px 6px 14px; position: relative; box-shadow: inset 0 0 0 1px #3a3a44, 0 2px 6px rgba(0,0,0,.4); }
-.bgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 2px; }
+.bpage { display: flex; flex-direction: column; flex: 1; background: linear-gradient(#26262e, #1d1d24); border-radius: 10px; padding: 12px 6px 14px; position: relative; box-shadow: inset 0 0 0 1px #3a3a44, 0 2px 6px rgba(0,0,0,.4); }
+.bgrid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 0 2px; align-items: center; justify-items: center; }
 .bpno { position: absolute; left: 9px; bottom: 3px; font-size: 10px; font-weight: 700; color: #6e6e78; }
 .binding { width: 16px; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; }
 .binding i { width: 15px; height: 10px; border-radius: 5px; background: linear-gradient(#55555e, #2c2c33, #55555e); box-shadow: 0 1px 2px rgba(0,0,0,.6); }
@@ -123,8 +123,18 @@ a { color: #0a84ff; }
 .medal.off .mart { filter: grayscale(1); opacity: 0.45; }
 .medal.sel .medal2 { outline: 2.5px dashed #ffd60a; outline-offset: 2px; }
 
-.medal3 { position: relative; width: 54px; height: 54px; display: block; border-radius: 50%; }
-.mart3 { position: absolute; left: 50%; top: 50%; width: 57%; height: 57%; transform: translate(-50%, -50%); border-radius: 50%; object-fit: cover; }
+.medal3 { position: relative; width: var(--msz, 54px); height: var(--msz, 54px); display: block; border-radius: 50%; }
+.mart3 { position: absolute; left: 50%; top: 50%; width: 60%; height: 60%; transform: translate(-50%, -50%); border-radius: 50%; object-fit: cover; }
 .mring3 { position: absolute; inset: 0; width: 100%; height: 100%; }
 .medal.off .mart3 { filter: grayscale(1); opacity: 0.45; }
 .medal.sel .medal3 { outline: 2.5px dashed #ffd60a; outline-offset: 2px; }
+
+.bookovl { position: fixed; inset: 0; z-index: 80; background: #0e0e12; display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 8px) 8px calc(env(safe-area-inset-bottom, 0px) + 10px); }
+.bookovl .bspread { flex: 1; min-height: 0; }
+.bhead { display: flex; align-items: center; gap: 8px; padding: 0 2px 8px; }
+.btitle { flex: 1; font-weight: 700; font-size: 15px; }
+.bclose { background: #2c2c33; color: #fff; border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 15px; flex: none; }
+.bbtn { background: #2c2c33; color: #7ee787; border: none; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 700; flex: none; }
+.bsearch { margin: 0 0 8px; background: #1c1c22; border: 1px solid #33333c; border-radius: 10px; color: #fff; padding: 9px 12px; font-size: 14px; width: 100%; box-sizing: border-box; }
+.bookovl .bookinfo { margin-top: 10px; }
+.bookovl .pager { margin-top: 10px; }
