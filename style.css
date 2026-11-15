@@ -111,3 +111,8 @@ a { color: #0a84ff; }
 .tedit input { background: #1c1c22; border: 1px solid #3a3a42; border-radius: 8px; color: #fff; padding: 8px; font-size: 15px; width: 100%; box-sizing: border-box; font-family: inherit; }
 
 .rpage .bpno { left: auto; right: 9px; }
+
+.mring2 { position: relative; width: 52px; height: 52px; display: block; border-radius: 50%; }
+.mring2 img { width: 100%; height: 100%; display: block; }
+.medal.off .mring2 img { filter: grayscale(1); opacity: 0.45; }
+.medal.sel .mring2 { outline: 2.5px dashed #ffd60a; outline-offset: 2px; }
