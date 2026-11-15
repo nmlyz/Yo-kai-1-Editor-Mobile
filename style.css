@@ -122,3 +122,9 @@ a { color: #0a84ff; }
 .mart { position: absolute; left: 7px; top: 7px; width: 38px; height: 38px; border-radius: 50%; object-fit: cover; display: block; }
 .medal.off .mart { filter: grayscale(1); opacity: 0.45; }
 .medal.sel .medal2 { outline: 2.5px dashed #ffd60a; outline-offset: 2px; }
+
+.medal3 { position: relative; width: 54px; height: 54px; display: block; border-radius: 50%; }
+.mart3 { position: absolute; left: 50%; top: 50%; width: 57%; height: 57%; transform: translate(-50%, -50%); border-radius: 50%; object-fit: cover; }
+.mring3 { position: absolute; inset: 0; width: 100%; height: 100%; }
+.medal.off .mart3 { filter: grayscale(1); opacity: 0.45; }
+.medal.sel .medal3 { outline: 2.5px dashed #ffd60a; outline-offset: 2px; }
