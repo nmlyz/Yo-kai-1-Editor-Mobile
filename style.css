@@ -332,3 +332,13 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 
 #histBtn { background: rgba(255,255,255,.88); color: #14324f; border: 0; border-radius: 10px; height: 40px; padding: 0 12px; font-size: 13.5px; font-weight: 700; cursor: pointer; flex: none; font-family: inherit; box-shadow: 0 2px 5px rgba(20,70,120,.25); margin-right: 8px; }
 .histlist { text-align: left; font-size: 13.5px; line-height: 1.9; max-height: 50dvh; overflow-y: auto; }
+
+/* ===== v52: detail fit + buttons ===== */
+.dcircle { width: min(76vw, 39dvh, 320px); margin-top: 2px; }
+.dcenter { width: 96px; height: 96px; }
+.dgoku { margin-top: 6px; }
+.gchip { height: 34px; }
+.limrow { margin-top: 8px; padding: 10px 14px; }
+.dbback { width: min(92%, 340px); height: 44px; border-radius: 14px; margin: 8px auto 2px; font-size: 14.5px; background: #fff; color: #1463b4; border: 2px solid #57a0d8; box-shadow: 0 2px 4px rgba(20,70,120,.2); }
+.dbback.primary { background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; border: 0; box-shadow: inset 0 2px 0 rgba(255,255,255,.8), 0 2px 4px rgba(20,70,120,.25); }
+.dbback:active { transform: scale(.98); }
