@@ -567,3 +567,10 @@ body { touch-action: none; }
 .limrow { padding: 6px 12px; }
 .limbtn { width: 84px; height: 40px; font-size: 14.5px; }
 .dbback { height: 47px; font-size: 16px; }
+
+/* v104: detail fits one screen with margin */
+.dwrap { gap: 6px; padding-top: 6px; }
+.diconbtn { width: 68px; height: 68px; }
+.drow { min-height: 43px; }
+.gchip { height: 41px; }
+.dbback { height: 45px; }
