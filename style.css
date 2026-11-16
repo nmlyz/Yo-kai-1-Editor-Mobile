@@ -89,7 +89,7 @@ a { color: #0a84ff; }
 .bspread.flip-prev { transform-origin: center; animation: flipPrev .38s ease; }
 @keyframes flipNext { from { transform: rotateY(-46deg); opacity: .2; } to { transform: rotateY(0deg); opacity: 1; } }
 @keyframes flipPrev { from { transform: rotateY(46deg); opacity: .2; } to { transform: rotateY(0deg); opacity: 1; } }
-.bpage { display: flex; flex-direction: column; flex: 1; min-width: 0; background: linear-gradient(#26262e, #1d1d24); border-radius: 10px; padding: 12px 6px 14px; position: relative; box-shadow: inset 0 0 0 1px #3a3a44, 0 2px 6px rgba(0,0,0,.4); }
+
 .bgrid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 0 2px; align-items: center; justify-items: center; }
 .bpno { position: absolute; left: 9px; bottom: 3px; font-size: 10px; font-weight: 700; color: #6e6e78; }
 .binding { width: 16px; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; }
@@ -180,12 +180,12 @@ a { color: #0a84ff; }
 .ptitle { position: absolute; top: 8px; left: 0; right: 0; text-align: center; font-size: 21px; font-weight: 800; color: #ffdf3d; font-family: "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", "Hiragino Sans", sans-serif; text-shadow: -2px 0 0 #402a12, 2px 0 0 #402a12, 0 -2px 0 #402a12, 0 2px 0 #402a12, -2px -2px 0 #402a12, 2px -2px 0 #402a12, -2px 2px 0 #402a12, 2px 2px 0 #402a12, 0 4px 5px rgba(0,0,0,.35); }
 .pcenter { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); width: 27%; aspect-ratio: 1.25; background: radial-gradient(ellipse at 50% 38%, #3d4b66, #141c2e 75%); border: 3px solid #d8b34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,40,90,.5); }
 .pcenter img { width: 74%; aspect-ratio: 1; object-fit: cover; object-position: 62% 38%; border-radius: 50%; display: block; }
-.pslot { position: absolute; width: 32%; display: flex; align-items: center; gap: 5px; background: linear-gradient(180deg, #fffbe8, #ffe873); border: 2px solid #e8a91c; border-radius: 999px; padding: 4px 8px 4px 4px; box-shadow: 0 2px 6px rgba(0,60,120,.4); text-align: left; font-family: inherit; cursor: pointer; }
+.pslot { position: absolute; width: 32%; overflow: hidden; display: flex; align-items: center; gap: 5px; background: linear-gradient(180deg, #fffbe8, #ffe873); border: 2px solid #e8a91c; border-radius: 999px; padding: 4px 8px 4px 4px; box-shadow: 0 2px 6px rgba(0,60,120,.4); text-align: left; font-family: inherit; cursor: pointer; }
 .pslot.empty { justify-content: center; color: #8a6d1f; font-size: 12px; font-weight: 700; background: linear-gradient(180deg, #f4f4f4, #d9d9d9); border-color: #a8a8a8; color: #777; min-height: 48px; }
-.psicon { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; border: 2.5px solid #8e8e93; background: #fff; overflow: hidden; display: block; }
-.psicon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.psicon { flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%; border: 2.5px solid #8e8e93; background: #fff; overflow: hidden; display: block; }
+.psicon img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.38); }
 .psinfo { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.psname { font-size: 11px; letter-spacing: 0; font-weight: 800; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.psname { font-size: 10.5px; letter-spacing: 0; font-weight: 800; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .psrow { display: flex; align-items: center; gap: 5px; }
 .pslv { background: #2f9df4; color: #fff; font-size: 9.5px; font-weight: 800; border-radius: 999px; padding: 1px 6px; }
 .pshp { font-size: 10px; font-weight: 800; color: #333; white-space: nowrap; }
@@ -195,12 +195,19 @@ a { color: #0a84ff; }
 #ver { font-size: 11px; color: #98989f; font-weight: 700; margin-left: 6px; }
 .verline { text-align: center; color: #63636b; font-size: 11px; padding-top: 10px; }
 
-.bspread { display: flex; margin: 10px 2px 4px; background: linear-gradient(180deg, #fdfdf6, #e8f0f8); border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,.5); overflow: hidden; }
-.bspread.flip { animation: pageflip .38s ease; transform-origin: left center; }
-@keyframes pageflip { from { transform: perspective(900px) rotateY(-9deg); opacity: .35; } to { transform: none; opacity: 1; } }
+
+
+
 .bpage { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px 10px; align-content: start; min-width: 0; }
 .bpage .mtimg img { border-radius: 16px; }
 .bpage .mtlb { font-size: 11.5px; bottom: 4px; }
 .bspine { flex: 0 0 14px; background: linear-gradient(90deg, rgba(30,50,80,.20), rgba(30,50,80,.04) 45%, rgba(30,50,80,.20)); display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; }
 .bspine i { width: 7px; height: 7px; border-radius: 50%; background: #b9c6d4; box-shadow: inset 0 1px 2px rgba(0,0,0,.45); display: block; }
 .mtempty { aspect-ratio: 1; border: 2px dashed rgba(90,110,140,.30); border-radius: 16px; }
+
+.mgrid.flip-next { animation: hflipN .38s ease; }
+.mgrid.flip-prev { animation: hflipP .38s ease; }
+@keyframes hflipN { from { transform: perspective(900px) rotateY(-11deg) translateX(16px); opacity: .3; } to { transform: none; opacity: 1; } }
+@keyframes hflipP { from { transform: perspective(900px) rotateY(11deg) translateX(-16px); opacity: .3; } to { transform: none; opacity: 1; } }
+.hpager { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 10px 0 2px; color: #fff; font-weight: 700; font-size: 13px; }
+.hpager button { background: #2c2c30; color: #fff; border: 0; width: 38px; height: 32px; border-radius: 10px; font-size: 14px; cursor: pointer; }
