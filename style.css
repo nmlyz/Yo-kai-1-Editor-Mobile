@@ -658,3 +658,5 @@ body[data-girl='1']::before { background-image: url('menu/bg_pink.webp?v=122'); 
 #list:has(> .dcard) { padding-bottom: 8px; }
 #list, #modalCard { touch-action: pan-y; }
 #muteBtn { background: rgba(255,255,255,.88); color: #14324f; border: 0; border-radius: 10px; height: 40px; width: 52px; padding: 0; cursor: pointer; flex: none; font-family: inherit; box-shadow: 0 2px 5px rgba(20,70,120,.25); display: inline-flex; align-items: center; justify-content: center; }
+
+.locked { opacity: .45; filter: grayscale(.7); }
