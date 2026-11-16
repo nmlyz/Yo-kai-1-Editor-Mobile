@@ -555,3 +555,6 @@ body { touch-action: none; }
 #list.home .mtimg { height: auto; aspect-ratio: 1; }
 #list.home .mtimg img { height: 100%; aspect-ratio: 1; object-fit: cover; }
 #list.home .mtempty { aspect-ratio: 1; height: auto; }
+
+/* v102: detail controls must not be flex-compressed when content overflows */
+.dcard, .dgoku, .limrow, .dbback { flex: none; }
