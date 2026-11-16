@@ -258,3 +258,13 @@ body { background: repeating-linear-gradient(180deg, rgba(255,255,255,.10) 0 7px
 #modalCard { background: #fff; color: #14324f; }
 #modalTitle { color: #14324f; }
 input[type="text"], input[type="number"], input[type="password"], input[type="url"], select, textarea { background: #fff; color: #14324f; border-color: #9fc6e8; }
+
+.limnote { color: #2c5a86; }
+.dsub { color: #2c5a86; }
+.pginfo { color: #1d4e79; }
+.tbtitle { color: #1d4e79; }
+#modalBody label { color: #5a7a99; }
+.tedit label { color: #5a7a99; }
+.mlb small { color: #5a7a99; }
+.mchev { color: #9fc6e8; }
+.verline { color: #5a7a99; }
