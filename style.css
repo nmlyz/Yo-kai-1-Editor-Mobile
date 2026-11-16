@@ -214,3 +214,47 @@ a { color: #0a84ff; }
 #list.home .mtimg { height: 100%; }
 #list.home .mtimg img { height: 100%; aspect-ratio: auto; object-fit: cover; }
 #list.home .mtempty { aspect-ratio: auto; height: 100%; }
+
+/* ===== game theme (v41) ===== */
+body { background: repeating-linear-gradient(180deg, rgba(255,255,255,.10) 0 7px, rgba(255,255,255,0) 7px 14px), radial-gradient(rgba(255,255,255,.20) 3px, transparent 3.8px) 8px 8px/48px 48px, radial-gradient(rgba(255,255,255,.14) 3px, transparent 3.8px) 32px 32px/48px 48px, linear-gradient(180deg, #8fd2f8 0%, #63b6f0 55%, #4aa7e8 100%); background-attachment: fixed; color: #14324f; }
+#hdr { background: transparent; }
+#title { color: #14324f; }
+#ver { color: #2c5a86; }
+#status { color: #1d4e79; }
+#menuBtn { background: rgba(255,255,255,.88); color: #14324f; box-shadow: 0 2px 5px rgba(20,70,120,.25); }
+#card { background: rgba(255,255,255,.87); border: 2px solid rgba(255,255,255,.95); box-shadow: 0 3px 8px rgba(20,70,120,.22); }
+#cardName { color: #14324f; }
+#cardSub { color: #3c6a99; }
+#moneyPill { background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; box-shadow: inset 0 2px 0 rgba(255,255,255,.8), 0 2px 4px rgba(20,70,120,.25); }
+#cardMeta button { background: rgba(255,255,255,.88); color: #1d4e79; border: 2px solid rgba(255,255,255,.95); box-shadow: 0 2px 4px rgba(20,70,120,.18); }
+.seg { background: rgba(255,255,255,.5); box-shadow: inset 0 1px 3px rgba(20,70,120,.18); }
+.seg button { color: #2c5a86; }
+.seg button.on { background: #fff; color: #14324f; box-shadow: 0 2px 4px rgba(20,70,120,.25); }
+#backBtn { background: rgba(255,255,255,.92); color: #1463b4; box-shadow: 0 2px 4px rgba(20,70,120,.2); }
+#backTitle { color: #14324f; }
+#list { scrollbar-color: #ffd83d #14507e; }
+#list::-webkit-scrollbar { width: 6px; }
+#list::-webkit-scrollbar-track { background: #14507e; border-radius: 3px; }
+#list::-webkit-scrollbar-thumb { background: #ffd83d; border-radius: 3px; }
+.row { background: linear-gradient(180deg, #eaf7ff, #bfe4fb 55%, #a3d4f9); border: 2px solid #57a0d8; border-radius: 14px; color: #14324f; box-shadow: inset 0 2px 0 rgba(255,255,255,.9), 0 2px 3px rgba(20,70,120,.22); }
+.row .dt { color: #1463b4; }
+.row .dt.gray { color: #5a7a99; }
+.row .dt.green { color: #1d9e4b; }
+.row .dt.orange { color: #e07b00; }
+.row .tx.green { color: #1d9e4b; }
+.row .tx.orange { color: #e07b00; }
+.row .tx.blue { color: #1463b4; }
+.row.gray .tx { color: #5a7a99; }
+.row img.ic { border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px #fff, 0 1px 3px rgba(20,70,120,.35); }
+.sect { color: #14507e; font-weight: 700; text-shadow: 0 1px 0 rgba(255,255,255,.7); }
+.toolbar button { background: rgba(255,255,255,.92); color: #1d4e79; box-shadow: 0 2px 4px rgba(20,70,120,.2); font-weight: 700; }
+.act.blue { background: linear-gradient(180deg, #6ec3f7, #2f9df4); }
+.act.orange { background: linear-gradient(180deg, #fff3a0, #ffc61a); color: #5a3a00; }
+.act.dark { background: rgba(255,255,255,.92); color: #1d4e79; }
+#foot { color: #1d4e79; }
+.limrow { background: rgba(255,255,255,.87); color: #14324f; box-shadow: 0 2px 5px rgba(20,70,120,.2); }
+.hpager { color: #14324f; }
+.hpager button { background: rgba(255,255,255,.92); color: #14324f; box-shadow: 0 2px 4px rgba(20,70,120,.2); }
+#modalCard { background: #fff; color: #14324f; }
+#modalTitle { color: #14324f; }
+input[type="text"], input[type="number"], input[type="password"], input[type="url"], select, textarea { background: #fff; color: #14324f; border-color: #9fc6e8; }
