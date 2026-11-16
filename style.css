@@ -430,3 +430,4 @@ img { -webkit-touch-callout: none; -webkit-user-drag: none; -webkit-user-select:
 html { overscroll-behavior: none; }
 body { touch-action: none; }
 #list, #modalCard { touch-action: pan-y; overscroll-behavior: contain; }
+.watchmark { width: 24px; height: 24px; flex: none; }
