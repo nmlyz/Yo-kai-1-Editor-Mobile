@@ -422,3 +422,6 @@ img { -webkit-touch-callout: none; -webkit-user-drag: none; -webkit-user-select:
 #cpNext:active:not(:disabled) { transform: scale(.98); }
 .cpsub { flex: none; height: 50px; padding: 0 14px; border-radius: 14px; border: 2px solid #57a0d8; background: #fff; color: #1463b4; font-size: 13px; font-weight: 800; font-family: inherit; cursor: pointer; }
 .labcur { color: #e03131; font-weight: 900; font-size: 15px; margin: 12px 0 2px; }
+.swapbtn { display: block; width: min(92%, 340px); margin: 10px auto 0; height: 44px; border-radius: 14px; border: 2px solid #57a0d8; background: #fff; color: #1463b4; font-size: 15px; font-weight: 800; font-family: inherit; cursor: pointer; }
+.swapbtn.on { background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; border-color: #e0a800; }
+.swapbtn:active { transform: scale(.98); }
