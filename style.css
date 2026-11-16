@@ -194,3 +194,13 @@ a { color: #0a84ff; }
 
 #ver { font-size: 11px; color: #98989f; font-weight: 700; margin-left: 6px; }
 .verline { text-align: center; color: #63636b; font-size: 11px; padding-top: 10px; }
+
+.bspread { display: flex; margin: 10px 2px 4px; background: linear-gradient(180deg, #fdfdf6, #e8f0f8); border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,.5); overflow: hidden; }
+.bspread.flip { animation: pageflip .38s ease; transform-origin: left center; }
+@keyframes pageflip { from { transform: perspective(900px) rotateY(-9deg); opacity: .35; } to { transform: none; opacity: 1; } }
+.bpage { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px 10px; align-content: start; min-width: 0; }
+.bpage .mtimg img { border-radius: 16px; }
+.bpage .mtlb { font-size: 11.5px; bottom: 4px; }
+.bspine { flex: 0 0 14px; background: linear-gradient(90deg, rgba(30,50,80,.20), rgba(30,50,80,.04) 45%, rgba(30,50,80,.20)); display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; }
+.bspine i { width: 7px; height: 7px; border-radius: 50%; background: #b9c6d4; box-shadow: inset 0 1px 2px rgba(0,0,0,.45); display: block; }
+.mtempty { aspect-ratio: 1; border: 2px dashed rgba(90,110,140,.30); border-radius: 16px; }
