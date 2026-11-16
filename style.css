@@ -610,3 +610,11 @@ body { touch-action: none; }
   .icell img { max-width: 54px; }
   #modalBtns button { font-size: 14px; padding: 11px 6px; }
 }
+
+/* v107: detail screen fits by flex, never scrolls; long lists render faster */
+.dwrap { height: 100%; }
+.dcard { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.drow { flex: 1 1 0; min-height: 34px; }
+.gchip { white-space: nowrap; font-size: 13.5px; padding: 0 4px; }
+.ykrow { content-visibility: auto; contain-intrinsic-size: auto 62px; }
+.icell { content-visibility: auto; contain-intrinsic-size: auto 86px; }
