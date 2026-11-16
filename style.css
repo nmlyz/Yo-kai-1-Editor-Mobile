@@ -431,3 +431,6 @@ html { overscroll-behavior: none; }
 body { touch-action: none; }
 #list, #modalCard { touch-action: pan-y; overscroll-behavior: contain; }
 .watchmark { width: 24px; height: 24px; flex: none; }
+
+.stickybar { position: sticky; top: 0; z-index: 6; background: linear-gradient(180deg, rgba(234,247,255,.97), rgba(213,236,252,.97)); border-radius: 12px; padding: 5px; box-shadow: 0 3px 8px rgba(20,70,120,.22); }
+.stickybar .toolbar { margin-top: 0; }
