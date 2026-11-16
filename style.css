@@ -623,3 +623,6 @@ body { touch-action: none; }
 .sndgrid { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 2px 12px; }
 .sndgrid button { background: rgba(255,255,255,.88); border: 2px solid #57a0d8; color: #1463b4; border-radius: 999px; padding: 7px 10px; font-size: 12px; font-weight: 700; font-family: inherit; cursor: pointer; }
 .sndgrid button:active { transform: scale(.95); }
+
+/* v110: double-tap zoom off (manipulation keeps pan/scroll, kills dbl-tap zoom) */
+#list, #modalCard, .bookovl { touch-action: manipulation; }
