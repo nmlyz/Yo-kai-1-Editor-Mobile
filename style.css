@@ -357,3 +357,14 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 .hck { flex: none; }
 
 .xbtn { display: inline-block; background: #000; color: #fff; font-weight: 800; font-size: 14px; padding: 10px 22px; border-radius: 999px; text-decoration: none; }
+
+/* ===== v57: watch rank panel ===== */
+.pcenter { width: 46%; aspect-ratio: 2.1; border-radius: 999px; background: radial-gradient(ellipse at 50% 38%, #3a4152, #161a24 78%); border: 2px solid #cfd6dd; flex-direction: row; gap: 5px; padding: 4px 10px; cursor: pointer; font-family: inherit; }
+.pcenter .pwatch { width: auto; height: 92%; aspect-ratio: 1; object-fit: contain; border-radius: 0; }
+.prankTx { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
+.prankLb { color: #fff; font-weight: 800; font-size: 11.5px; letter-spacing: .02em; text-shadow: 0 1px 2px rgba(0,0,0,.6); white-space: nowrap; }
+.pcenter .prankImg { height: 26px; width: auto; object-fit: contain; border-radius: 0; }
+.rankgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.rankbtn { background: linear-gradient(180deg, #eaf7ff, #bfe4fb); border: 2px solid #57a0d8; border-radius: 14px; padding: 10px 4px; cursor: pointer; }
+.rankbtn img { height: 34px; }
+.rankbtn.cur { background: linear-gradient(180deg, #fff3a0, #ffd83d); border-color: #e0a800; }
