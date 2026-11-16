@@ -574,3 +574,39 @@ body { touch-action: none; }
 .drow { min-height: 43px; }
 .gchip { height: 41px; }
 .dbback { height: 45px; }
+
+/* v106: fixed device geometry - render at the phone size on every screen */
+#app { max-width: 402px; }
+#list.home .mgrid { flex: none; grid-template-rows: repeat(3, 104px); }
+.pstage { width: min(96vw, 386px); }
+@media (min-width: 620px) {
+  #app { max-width: 402px; }
+  #modalWrap, #progWrap, .bookovl { max-width: 402px; }
+  #modalCard { max-width: 400px; }
+  #toast { max-width: min(92vw, 400px); font-size: 13.5px; }
+  .pstage { width: min(96vw, 386px); }
+  body { font-size: 15px; }
+  #title { font-size: 17px; }
+  #status { font-size: 12px; }
+  #histBtn { font-size: 13.5px; padding: 0 12px; }
+  #cardName { font-size: 16px; }
+  #cardMeta button { font-size: 12.5px; padding: 7px 4px; }
+  #moneyPill { font-size: 14px; padding: 9px 14px; }
+  .seg button { font-size: 13px; padding: 7px 2px; }
+  .mtlb { font-size: 13.5px; bottom: 6px; }
+  .mdot { width: 21px; height: 21px; }
+  .hpager { font-size: 13px; }
+  .pgbtn { width: 46px; height: 34px; font-size: 13px; border-radius: 17px; }
+  .row { height: 54px; font-size: 15px; padding: 0 12px; }
+  .row img.ic { width: 40px; height: 40px; }
+  .row .dt { font-size: 12.5px; }
+  .diconbtn { width: 68px; height: 68px; }
+  .drow { min-height: 43px; padding: 5px 2px; font-size: 15px; }
+  .gchip { height: 41px; font-size: 14.5px; }
+  .dbback { height: 45px; font-size: 16px; }
+  .limrow { font-size: 15.5px; }
+  .limbtn { width: 84px; height: 40px; font-size: 14.5px; }
+  .ykm { width: 46px; height: 46px; max-width: 46px; }
+  .icell img { max-width: 54px; }
+  #modalBtns button { font-size: 14px; padding: 11px 6px; }
+}
