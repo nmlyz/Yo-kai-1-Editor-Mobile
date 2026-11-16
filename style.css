@@ -393,7 +393,8 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 .cpickhead { margin-top: 12px; font-size: 16px; font-weight: 900; color: #14324f; }
 .slotcards { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
 .slotcard { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border: 3px solid #fff; border-radius: 16px; padding: 8px 12px; cursor: pointer; background: linear-gradient(180deg, #e3c8f7, #c39bf0 55%, #a678e3); color: #3a2358; box-shadow: 0 3px 6px rgba(30,60,110,.25); font-family: inherit; }
-.slotcard.src { background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; }
+.slotcard.sel { background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; }
+.slotcard.src { opacity: .78; }
 .slotcard:active { transform: scale(.98); }
 .scnum { display: flex; flex-direction: column; align-items: center; line-height: 1; flex: none; }
 .scnum small { font-size: 10px; font-weight: 800; }
@@ -415,3 +416,9 @@ button.tb-circle { background: linear-gradient(180deg, #7cc0f5, #3f96dd); color:
 
 /* v65: no long-press image callout */
 img { -webkit-touch-callout: none; -webkit-user-drag: none; -webkit-user-select: none; user-select: none; }
+.cpickfoot { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+#cpNext { flex: 1; height: 50px; border: 0; border-radius: 14px; font-size: 17px; font-weight: 900; font-family: inherit; cursor: pointer; background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; box-shadow: 0 3px 6px rgba(30,60,110,.25); }
+#cpNext:disabled { background: #cfd8e0; color: #7a8a99; box-shadow: none; cursor: default; }
+#cpNext:active:not(:disabled) { transform: scale(.98); }
+.cpsub { flex: none; height: 50px; padding: 0 14px; border-radius: 14px; border: 2px solid #57a0d8; background: #fff; color: #1463b4; font-size: 13px; font-weight: 800; font-family: inherit; cursor: pointer; }
+.labcur { color: #e03131; font-weight: 900; font-size: 15px; margin: 12px 0 2px; }
