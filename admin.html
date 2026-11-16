@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>管理</title>
+<style>
+  body { font-family: sans-serif; margin: 16px; background: #f2f6fa; color: #14324f; }
+  h1 { font-size: 20px; } h2 { font-size: 16px; margin-top: 28px; }
+  input, select, button { font-size: 15px; padding: 8px; border-radius: 8px; border: 1px solid #9db8cc; }
+  button { background: #1463b4; color: #fff; border: none; font-weight: bold; cursor: pointer; }
+  button.sub { background: #fff; color: #1463b4; border: 2px solid #57a0d8; }
+  button.danger { background: #c0392b; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 8px 0; }
+  .card { background: #fff; border-radius: 12px; padding: 12px; margin: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .code { font-family: monospace; font-weight: bold; font-size: 17px; }
+  .muted { color: #6b8296; font-size: 13px; }
+  table { border-collapse: collapse; } td { padding: 4px 8px 4px 0; }
+  #msg { color: #c0392b; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>yw1 管理画面</h1>
+<div class="row">
+  <input id="relay" size="34" value="https://yw1.nmlyz.workers.dev">
+  <input id="pw" type="password" size="16" placeholder="管理者パスワード">
+  <button id="login">ログイン</button>
+</div>
+<div id="msg"></div>
+<div id="main" hidden>
+  <h2>ユーザー一覧</h2>
+  <div class="row"><button class="sub" id="reload">再読み込み</button><span class="muted">ユーザーはアプリを開くと自動でここに表示されます</span></div>
+  <div id="users"></div>
+  <h2>ハート設定</h2>
+  <div class="card" id="cfgBox"></div>
+  <div class="row"><button id="saveCfg">設定を保存</button></div>
+</div>
+<script>
+let PW = '';
+const $ = id => document.getElementById(id);
+const LEVELS = { 1: 'ノーマル', 2: 'メンバー', 3: 'プレミアム', 4: '管理者' };
+const ACTIONS = { equip: '装備変更', quest: 'クエスト系の個別切替', dex: '大辞典の登録オンオフ', item: 'もちもの個数変更', itemadd: 'アイテム追加', money: '所持金', pname: 'プレイヤー名', level: 'レベル変更', yokaiadd: '妖怪の追加', species: '種族変更', watchrank: 'ウォッチランク', ptime: 'プレイ時間・日記日時' };
+async function api(op, extra) {
+  const r = await fetch($('relay').value.replace(/\/$/, '') + '/__admin', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pw: PW, op, ...extra }) });
+  const j = await r.json();
+  if (j.error) throw new Error(j.error);
+  return j;
+}
+function msg(t) { $('msg').textContent = t || ''; }
+async function load() {
+  msg('');
+  const { users, cfg } = await api('list');
+  const box = $('users');
+  box.innerHTML = users.length ? '' : '<div class="muted">まだユーザーがいません</div>';
+  for (const u of users) {
+    const d = document.createElement('div');
+    d.className = 'card';
+    const sel = Object.keys(LEVELS).map(l => `<option value="${l}"${+l === u.level ? ' selected' : ''}>${LEVELS[l]}</option>`).join('');
+    d.innerHTML = `<span class="code">${u.code}</span> <span class="muted">ハート: ${u.level >= 3 ? '∞' : u.hearts} ／ 消費中: ${u.charged}件</span>
+      <div class="row"><select id="lv">${sel}</select>
+      <button data-a="set">レベル変更</button>
+      <button class="sub" data-a="heal">ハート全回復</button>
+      <button class="danger" data-a="del">削除</button></div>`;
+    d.querySelector('[data-a="set"]').onclick = async () => { await api('setLevel', { uid: u.uid, level: +d.querySelector('#lv').value }); msg('変更しました'); load(); };
+    d.querySelector('[data-a="heal"]').onclick = async () => { await api('setLevel', { uid: u.uid, level: u.level, resetHearts: 1 }); msg('回復しました'); load(); };
+    d.querySelector('[data-a="del"]').onclick = async () => { if (confirm(u.code + ' を削除しますか？')) { await api('remove', { uid: u.uid }); load(); } };
+    box.appendChild(d);
+  }
+  const c = $('cfgBox');
+  let html = '<table>';
+  html += `<tr><td>ハート上限（ノーマル）</td><td><input id="cap1" type="number" min="0" value="${cfg.caps[1]}" size="4"></td></tr>`;
+  html += `<tr><td>ハート上限（メンバー）</td><td><input id="cap2" type="number" min="0" value="${cfg.caps[2]}" size="4"></td></tr>`;
+  html += `<tr><td>回復（ノーマル・分に1個）</td><td><input id="rg1" type="number" min="1" value="${cfg.regenMin[1]}" size="4"></td></tr>`;
+  html += `<tr><td>回復（メンバー・分に1個）</td><td><input id="rg2" type="number" min="1" value="${cfg.regenMin[2]}" size="4"></td></tr>`;
+  html += '</table><table>';
+  for (const k of Object.keys(ACTIONS)) html += `<tr><td>${ACTIONS[k]}</td><td><input id="cost_${k}" type="number" min="0" value="${cfg.costs[k]}" size="4"></td></tr>`;
+  html += '</table>';
+  c.innerHTML = html;
+  $('main').hidden = false;
+}
+$('login').onclick = async () => { PW = $('pw').value; try { await load(); } catch (e) { msg('ログイン失敗: ' + e.message); } };
+$('reload').onclick = () => load().catch(e => msg(e.message));
+$('saveCfg').onclick = async () => {
+  const costs = {};
+  for (const k of Object.keys(ACTIONS)) costs[k] = parseInt($('cost_' + k).value, 10) || 0;
+  const cfg = { caps: { 1: parseInt($('cap1').value, 10) || 3, 2: parseInt($('cap2').value, 10) || 5 }, regenMin: { 1: parseInt($('rg1').value, 10) || 30, 2: parseInt($('rg2').value, 10) || 20 }, costs };
+  try { await api('setCfg', { cfg }); msg('設定を保存しました'); } catch (e) { msg(e.message); }
+};
+</script>
+</body>
+</html>
