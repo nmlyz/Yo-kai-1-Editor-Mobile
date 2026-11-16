@@ -259,7 +259,7 @@ body { background: repeating-linear-gradient(180deg, rgba(255,255,255,.10) 0 7px
 .hpager button { background: rgba(255,255,255,.92); color: #14324f; box-shadow: 0 2px 4px rgba(20,70,120,.2); }
 #modalCard { background: #fff; color: #14324f; }
 #modalTitle { color: #14324f; }
-input[type="text"], input[type="number"], input[type="password"], input[type="url"], select, textarea { background: #fff; color: #14324f; border-color: #9fc6e8; }
+input[type="text"], input[type="number"], input[type="password"], input[type="url"], input[type="datetime-local"], select, textarea { background: #fff; color: #14324f; border-color: #9fc6e8; }
 
 .limnote { color: #2c5a86; font-size: 12.5px; font-weight: 600; }
 .dsub { color: #2c5a86; }
@@ -318,7 +318,8 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 .ditem { height: 34px; line-height: 34px; font-size: 17px; font-weight: 700; color: #14324f; scroll-snap-align: center; text-align: center; }
 .drumband { position: absolute; left: 2px; right: 2px; top: 34px; height: 34px; border-top: 2px solid #57a0d8; border-bottom: 2px solid #57a0d8; background: rgba(87,160,216,.10); border-radius: 6px; pointer-events: none; }
 .dunit { font-size: 12px; color: #5a7a99; font-weight: 700; margin-top: 4px; }
-#modalBody input[type="datetime-local"] { width: 100%; box-sizing: border-box; font-size: 16px; }
+#modalBody input[type="datetime-local"] { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 16px; }
+.tedit input { min-width: 0; }
 #progWrap { position: fixed; inset: 0; background: rgba(10,30,50,.45); z-index: 300; display: flex; align-items: center; justify-content: center; }
 #progWrap[hidden] { display: none; }
 #progCard { background: #fff; border-radius: 16px; padding: 20px 22px; width: min(78vw, 300px); box-shadow: 0 10px 30px rgba(0,30,60,.35); text-align: center; }
@@ -326,3 +327,5 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 #progBarWrap { height: 14px; background: #dceefb; border-radius: 7px; overflow: hidden; }
 #progBar { height: 100%; width: 0%; background: linear-gradient(90deg, #57a0d8, #ffd83d); border-radius: 7px; transition: width .3s ease; }
 #progEta { margin-top: 10px; font-size: 13px; color: #2c5a86; font-weight: 600; }
+
+#modalWrap, #progWrap, .bookovl { overscroll-behavior: contain; }
