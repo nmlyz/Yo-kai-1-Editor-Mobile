@@ -176,7 +176,7 @@ a { color: #0a84ff; }
 #toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 84px); transform: translateX(-50%) translateY(10px); background: rgba(30,30,36,.93); color: #fff; font-size: 13.5px; font-weight: 700; padding: 11px 20px; border-radius: 999px; box-shadow: 0 6px 20px rgba(0,0,0,.55); opacity: 0; transition: opacity .25s ease, transform .25s ease; z-index: 200; pointer-events: none; max-width: 86vw; text-align: center; }
 #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-.pstage { position: relative; width: min(96vw, 430px); aspect-ratio: 1.15; margin: 8px auto 4px; border-radius: 26px; background: radial-gradient(circle at 18% 12%, rgba(255,255,255,.5), rgba(255,255,255,0) 42%), radial-gradient(rgba(255,255,255,.28) 2.2px, transparent 2.6px) 0 0/26px 26px, linear-gradient(180deg, #a8e2ff 0%, #5db6f5 55%, #2f8fe8 100%); border: 3px solid #e6f7ff; box-shadow: 0 6px 18px rgba(0,40,90,.45), inset 0 2px 0 rgba(255,255,255,.7); overflow: hidden; }
+.pstage { position: relative; width: min(96vw, 430px); aspect-ratio: 1.02; margin: 8px auto 4px; border-radius: 26px; background: radial-gradient(circle at 18% 12%, rgba(255,255,255,.5), rgba(255,255,255,0) 42%), radial-gradient(rgba(255,255,255,.28) 2.2px, transparent 2.6px) 0 0/26px 26px, linear-gradient(180deg, #a8e2ff 0%, #5db6f5 55%, #2f8fe8 100%); border: 3px solid #e6f7ff; box-shadow: 0 6px 18px rgba(0,40,90,.45), inset 0 2px 0 rgba(255,255,255,.7); overflow: hidden; }
 .ptitle { position: absolute; top: 5px; left: 0; right: 0; text-align: center; font-size: 21px; font-weight: 800; color: #ffdf3d; font-family: "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", "Hiragino Sans", sans-serif; text-shadow: -2px 0 0 #402a12, 2px 0 0 #402a12, 0 -2px 0 #402a12, 0 2px 0 #402a12, -2px -2px 0 #402a12, 2px -2px 0 #402a12, -2px 2px 0 #402a12, 2px 2px 0 #402a12, 0 4px 5px rgba(0,0,0,.35); }
 .pcenter { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); width: 27%; aspect-ratio: 1.25; background: radial-gradient(ellipse at 50% 38%, #3d4b66, #141c2e 75%); border: 3px solid #d8b34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,40,90,.5); }
 .pcenter img { width: 74%; aspect-ratio: 1; object-fit: cover; object-position: 62% 38%; border-radius: 50%; display: block; }
@@ -359,7 +359,7 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 .xbtn { display: inline-block; background: #000; color: #fff; font-weight: 800; font-size: 14px; padding: 10px 22px; border-radius: 999px; text-decoration: none; }
 
 /* ===== v57: watch rank panel ===== */
-.pcenter { width: 46%; aspect-ratio: 2.1; border-radius: 999px; background: radial-gradient(ellipse at 50% 38%, #3a4152, #161a24 78%); border: 2px solid #cfd6dd; flex-direction: row; gap: 5px; padding: 4px 10px; cursor: pointer; font-family: inherit; }
+.pcenter { top: 49.5%; width: 44%; aspect-ratio: 2.5; border-radius: 999px; background: radial-gradient(ellipse at 50% 38%, #3a4152, #161a24 78%); border: 2px solid #cfd6dd; flex-direction: row; gap: 5px; padding: 4px 10px; cursor: pointer; font-family: inherit; }
 .pcenter .pwatch { width: auto; height: 92%; aspect-ratio: 1; object-fit: contain; border-radius: 0; }
 .prankTx { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
 .prankLb { color: #fff; font-weight: 800; font-size: 11.5px; letter-spacing: .02em; text-shadow: 0 1px 2px rgba(0,0,0,.6); white-space: nowrap; }
