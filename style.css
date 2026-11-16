@@ -531,3 +531,20 @@ body { touch-action: none; }
   .pstage { width: min(92%, 680px); }
   .mtlb { font-size: 19px; }
 }
+
+/* v99: detail screen, game-style chunky high-contrast controls */
+.dname { font-size: 23px; font-weight: 800; }
+.dsub { font-size: 13.5px; }
+.diconbtn { width: 116px; height: 116px; border-width: 7px; }
+.dcard { border: 3px solid #57a0d8; border-radius: 18px; }
+.drow { min-height: 57px; padding: 10px 14px; }
+.drn { font-size: 15px; color: #1463b4; width: 92px; }
+.drv { font-size: 18px; }
+.drq { width: 26px; height: 26px; font-size: 15px; background: #57a0d8; color: #fff; }
+.dgokuL { font-size: 15.5px; }
+.gchip { height: 52px; font-size: 15.5px; border-radius: 14px; background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; border: 3px solid #b97e0a; box-shadow: 0 3px 0 #b97e0a, 0 4px 6px rgba(20,70,120,.25); }
+.limrow { padding: 10px 10px 10px 16px; font-size: 15.5px; border: 3px solid #57a0d8; }
+.limbtn { width: 94px; height: 46px; font-size: 16.5px; border-radius: 14px; background: #5a7a99; color: #fff; border: 3px solid #3d5a75; box-shadow: 0 3px 0 #3d5a75; }
+.limbtn.on { background: linear-gradient(180deg, #ff8a80, #f44336); border-color: #b71c1c; box-shadow: 0 3px 0 #b71c1c; color: #fff; }
+.dbback { height: 57px; font-size: 17px; border-radius: 16px; border: 3px solid #1463b4; box-shadow: 0 4px 0 #1463b4, 0 6px 8px rgba(20,70,120,.25); margin-top: 12px; }
+.dbback.primary { border: 3px solid #b97e0a; box-shadow: 0 4px 0 #b97e0a, 0 6px 8px rgba(20,70,120,.25); color: #5a3a00; }
