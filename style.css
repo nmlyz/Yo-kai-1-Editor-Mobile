@@ -656,3 +656,4 @@ body[data-girl='1']::before { background-image: url('menu/bg_pink.webp?v=122'); 
 .devinp { width: 100%; box-sizing: border-box; font-size: 17px; padding: 12px 14px; border: 2px solid #57a0d8; border-radius: 12px; text-align: center; letter-spacing: 2px; font-family: inherit; background: #f4faff; color: #14324f; outline: none; }
 .devinp:focus { border-color: #1463b4; background: #fff; }
 #list:has(> .dcard) { padding-bottom: 8px; }
+#list, #modalCard { touch-action: pan-y; }
