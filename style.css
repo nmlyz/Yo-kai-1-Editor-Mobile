@@ -549,12 +549,21 @@ body { touch-action: none; }
 .dbback { height: 57px; font-size: 17px; border-radius: 16px; border: 3px solid #1463b4; box-shadow: 0 4px 0 #1463b4, 0 6px 8px rgba(20,70,120,.25); margin-top: 12px; }
 .dbback.primary { border: 3px solid #b97e0a; box-shadow: 0 4px 0 #b97e0a, 0 6px 8px rgba(20,70,120,.25); color: #5a3a00; }
 
-/* v101: home tiles stay exactly square so tile art is never cropped unevenly */
-#list.home .mgrid { grid-template-rows: repeat(3, auto); align-content: center; }
-#list.home .mtile { height: auto; }
-#list.home .mtimg { height: auto; aspect-ratio: 1; }
-#list.home .mtimg img { height: 100%; aspect-ratio: 1; object-fit: cover; }
-#list.home .mtempty { aspect-ratio: 1; height: auto; }
-
 /* v102: detail controls must not be flex-compressed when content overflows */
 .dcard, .dgoku, .limrow, .dbback { flex: none; }
+
+/* v103: detail screen fits one screen without scrolling (v99 look, compact) */
+.dwrap { gap: 7px; padding-top: 8px; }
+.dname { font-size: 20px; }
+.diconbtn { width: 82px; height: 82px; }
+.dcard { padding: 3px 12px; }
+.drow { min-height: 45px; padding: 5px 2px; }
+.drn { font-size: 14px; width: 86px; }
+.drv { font-size: 16.5px; }
+.drq { width: 23px; height: 23px; font-size: 13px; }
+.dgoku { gap: 7px; }
+.dgoku .glabel { font-size: 13px; }
+.gchip { height: 43px; font-size: 14.5px; }
+.limrow { padding: 6px 12px; }
+.limbtn { width: 84px; height: 40px; font-size: 14.5px; }
+.dbback { height: 47px; font-size: 16px; }
