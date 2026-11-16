@@ -481,3 +481,6 @@ body { touch-action: none; }
 .drc { color: #9db8cc; font-size: 19px; flex: none; }
 .drup { color: #ff8a00; font-weight: 900; flex: none; }
 .drq { flex: none; width: 22px; height: 22px; border-radius: 50%; background: #dceefb; color: #1463b4; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+
+/* v93 puni tile: fit whole face */
+.mtimg.puni img { transform: scale(1.08); }
