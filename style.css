@@ -434,3 +434,11 @@ body { touch-action: none; }
 
 .stickybar { position: sticky; top: 0; z-index: 6; background: linear-gradient(180deg, rgba(234,247,255,.97), rgba(213,236,252,.97)); border-radius: 12px; padding: 5px; box-shadow: 0 3px 8px rgba(20,70,120,.22); }
 .stickybar .toolbar { margin-top: 0; }
+
+/* v78 unified back buttons */
+#backBtn, .yoktb button.bk, .row.backbtn, .dbback, .cpsub { background: #fff; border: 2px solid #57a0d8; color: #1463b4; font-weight: 700; border-radius: 12px; box-shadow: 0 2px 4px rgba(20,70,120,.18); }
+#backBtn { height: 44px; padding: 0 16px; font-size: 14.5px; }
+.yoktb button.bk { height: 44px; padding: 0 16px; font-size: 14.5px; }
+.row.backbtn { height: 44px; }
+.row.backbtn .tx::before { content: '‹ '; font-weight: 900; }
+.cpsub { height: 44px; font-size: 14.5px; }
