@@ -278,3 +278,22 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 .psplate { display: flex; align-items: center; gap: 5px; background: linear-gradient(180deg, #fffbe8, #ffe873); border: 2px solid #e8a91c; border-radius: 999px; padding: 2px 9px 2px 3px; margin-top: -13px; box-shadow: 0 2px 5px rgba(20,70,120,.3); position: relative; z-index: 2; }
 .pslv { font-size: 10px; padding: 1px 6px; }
 .pshp { font-size: 11px; }
+
+/* ===== readability & buttons (v44) ===== */
+.mlb { color: #14324f; }
+.mrow { border-bottom: 1px solid #d7e7f3; }
+.mrow:active { background: #eaf5fd; }
+.mchev { color: #57a0d8; }
+#modalBtns button { background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; box-shadow: inset 0 2px 0 rgba(255,255,255,.8), 0 2px 4px rgba(20,70,120,.25); border-radius: 12px; }
+#modalBtns button.sub { background: #fff; color: #1463b4; border: 2px solid #57a0d8; box-shadow: none; }
+#modalBtns button.danger { background: linear-gradient(180deg, #ff8a80, #f44336); color: #fff; box-shadow: 0 2px 4px rgba(120,20,20,.3); }
+#modalBtns button:active { transform: scale(.98); }
+.quick button { background: linear-gradient(180deg, #eaf7ff, #bfe4fb); color: #1463b4; border: 2px solid #57a0d8; font-weight: 700; }
+.gchip { background: rgba(255,255,255,.92); color: #1463b4; border: 2px solid #57a0d8; box-shadow: 0 2px 4px rgba(20,70,120,.2); }
+.gchip:active { transform: scale(.97); }
+.satn { color: #d8d8e2; }
+.limbtn { background: #fff; color: #1463b4; border: 2px solid #57a0d8; }
+.limbtn.on { background: linear-gradient(180deg, #ff8a80, #f44336); color: #fff; border: 2px solid #d32f2f; }
+.row:active { filter: brightness(1.06); transform: scale(.995); }
+.toolbar button:active, #backBtn:active, .hpager button:active { transform: scale(.97); }
+#modalBody { color: #14324f; }
