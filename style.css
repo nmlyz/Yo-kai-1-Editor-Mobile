@@ -427,3 +427,6 @@ img { -webkit-touch-callout: none; -webkit-user-drag: none; -webkit-user-select:
 .swapbtn:active { transform: scale(.98); }
 .qbulk { gap: 6px; }
 .qbulk button { flex: 1; font-size: 12.5px; padding: 10px 2px; white-space: nowrap; }
+html { overscroll-behavior: none; }
+body { touch-action: none; }
+#list, #modalCard { touch-action: pan-y; overscroll-behavior: contain; }
