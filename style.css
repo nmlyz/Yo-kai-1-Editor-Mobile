@@ -632,3 +632,20 @@ body { background-color: #80cbf9; }
 body::before { content: ''; position: fixed; inset: -4%; background: url('menu/bg_blue.webp?v=122') center / cover no-repeat; animation: bgDrift 34s ease-in-out infinite alternate; z-index: -1; pointer-events: none; }
 body[data-girl='1']::before { background-image: url('menu/bg_pink.webp?v=122'); }
 @keyframes bgDrift { from { transform: translate3d(-1.4%, -1.8%, 0) scale(1.04); } to { transform: translate3d(1.4%, 1.8%, 0) scale(1.04); } }
+
+/* v123 detail fit: whole detail screen fits without scrolling */
+#list:has(> .dcard) { overflow: hidden; }
+#list:has(> .dcard) > * { flex: none; }
+#list:has(> .dcard) .dname { font-size: 21px; margin-top: 0; }
+#list:has(> .dcard) .dsub { font-size: 12.5px; margin-top: 1px; }
+#list:has(> .dcard) .dicon { margin: 4px 0 6px; }
+#list:has(> .dcard) .diconbtn { width: 76px; height: 76px; border-width: 5px; }
+#list:has(> .dcard) .dcard { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; margin-bottom: 0; }
+#list:has(> .dcard) .drow { flex: 1 1 0; min-height: 0; padding-top: 0; padding-bottom: 0; }
+#list:has(> .dcard) .drn { font-size: 13.5px; }
+#list:has(> .dcard) .drv { font-size: 14px; }
+#list:has(> .dcard) .dgoku { margin-top: 6px; }
+#list:has(> .dcard) .gchip { height: 38px; }
+#list:has(> .dcard) .limrow { margin-top: 6px; padding: 6px 8px 6px 12px; }
+#list:has(> .dcard) .limbtn { height: 36px; }
+#list:has(> .dcard) .dbback { height: 42px; margin-top: 6px; font-size: 14.5px; }
