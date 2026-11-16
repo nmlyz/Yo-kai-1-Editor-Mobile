@@ -468,3 +468,16 @@ body { touch-action: none; }
 .bclose { width: 48px; height: 48px; font-size: 22px; font-weight: 700; background: #fff; color: #14324f; }
 .bbtn { background: #ffd83d; color: #14324f; border-radius: 999px; padding: 10px 16px; font-size: 14px; min-height: 44px; }
 .bookovl .pager button { background: #fff; color: #14324f; border: none; border-radius: 999px; min-width: 96px; height: 48px; font-size: 16px; font-weight: 700; }
+
+/* v92 detail list */
+.dicon { display: flex; justify-content: center; margin: 8px 0 12px; }
+.diconbtn { width: 104px; height: 104px; border-radius: 50%; border: 6px solid #8e8e93; background: #1c1c22; padding: 0; cursor: pointer; overflow: hidden; }
+.diconbtn img { width: 100%; height: 100%; object-fit: contain; transform: scale(1.42); display: block; }
+.dcard { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(20,50,79,.14); margin-bottom: 14px; }
+.drow { display: flex; align-items: center; gap: 7px; width: 100%; padding: 13px 14px; background: #fff; border: none; border-bottom: 1px solid #e3eef7; font-family: inherit; text-align: left; cursor: pointer; box-sizing: border-box; }
+.drow:last-child { border-bottom: none; }
+.drn { font-size: 13.5px; color: #5b7a94; font-weight: 700; flex: none; width: 84px; }
+.drv { flex: 1; font-size: 15px; font-weight: 700; color: #14324f; text-align: right; }
+.drc { color: #9db8cc; font-size: 19px; flex: none; }
+.drup { color: #ff8a00; font-weight: 900; flex: none; }
+.drq { flex: none; width: 22px; height: 22px; border-radius: 50%; background: #dceefb; color: #1463b4; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
