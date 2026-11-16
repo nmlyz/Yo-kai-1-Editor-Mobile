@@ -626,3 +626,9 @@ body { touch-action: none; }
 
 /* v110: double-tap zoom off (manipulation keeps pan/scroll, kills dbl-tap zoom) */
 #list, #modalCard, .bookovl { touch-action: manipulation; }
+
+/* v122: real game background (mm_save_u00) with a slow drift */
+body { background-color: #80cbf9; }
+body::before { content: ''; position: fixed; inset: -4%; background: url('menu/bg_blue.webp?v=122') center / cover no-repeat; animation: bgDrift 34s ease-in-out infinite alternate; z-index: -1; pointer-events: none; }
+body[data-girl='1']::before { background-image: url('menu/bg_pink.webp?v=122'); }
+@keyframes bgDrift { from { transform: translate3d(-1.4%, -1.8%, 0) scale(1.04); } to { transform: translate3d(1.4%, 1.8%, 0) scale(1.04); } }
