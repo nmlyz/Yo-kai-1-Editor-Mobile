@@ -180,15 +180,15 @@ a { color: #0a84ff; }
 .ptitle { position: absolute; top: 8px; left: 0; right: 0; text-align: center; font-size: 21px; font-weight: 800; color: #ffdf3d; font-family: "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", "Hiragino Sans", sans-serif; text-shadow: -2px 0 0 #402a12, 2px 0 0 #402a12, 0 -2px 0 #402a12, 0 2px 0 #402a12, -2px -2px 0 #402a12, 2px -2px 0 #402a12, -2px 2px 0 #402a12, 2px 2px 0 #402a12, 0 4px 5px rgba(0,0,0,.35); }
 .pcenter { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%); width: 27%; aspect-ratio: 1.25; background: radial-gradient(ellipse at 50% 38%, #3d4b66, #141c2e 75%); border: 3px solid #d8b34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,40,90,.5); }
 .pcenter img { width: 74%; aspect-ratio: 1; object-fit: cover; object-position: 62% 38%; border-radius: 50%; display: block; }
-.pslot { position: absolute; width: 32%; overflow: hidden; display: flex; align-items: center; gap: 5px; background: linear-gradient(180deg, #fffbe8, #ffe873); border: 2px solid #e8a91c; border-radius: 999px; padding: 4px 8px 4px 4px; box-shadow: 0 2px 6px rgba(0,60,120,.4); text-align: left; font-family: inherit; cursor: pointer; }
+.pslot { position: absolute; width: 32%; overflow: hidden; display: flex; align-items: center; gap: 4px; background: linear-gradient(180deg, #fffbe8, #ffe873); border: 2px solid #e8a91c; border-radius: 999px; padding: 4px 6px 4px 4px; box-shadow: 0 2px 6px rgba(0,60,120,.4); text-align: left; font-family: inherit; cursor: pointer; }
 .pslot.empty { justify-content: center; color: #8a6d1f; font-size: 12px; font-weight: 700; background: linear-gradient(180deg, #f4f4f4, #d9d9d9); border-color: #a8a8a8; color: #777; min-height: 48px; }
-.psicon { flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%; border: 2.5px solid #8e8e93; background: #fff; overflow: hidden; display: block; }
+.psicon { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; border: 2.5px solid #8e8e93; background: #fff; overflow: hidden; display: block; }
 .psicon img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.38); }
 .psinfo { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.psname { font-size: 10.5px; letter-spacing: 0; font-weight: 800; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.psrow { display: flex; align-items: center; gap: 5px; }
-.pslv { background: #2f9df4; color: #fff; font-size: 9.5px; font-weight: 800; border-radius: 999px; padding: 1px 6px; }
-.pshp { font-size: 10px; font-weight: 800; color: #333; white-space: nowrap; }
+.psname { font-size: 10px; letter-spacing: 0; font-weight: 800; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.psrow { display: flex; align-items: center; gap: 4px; }
+.pslv { background: #2f9df4; color: #fff; font-size: 9px; font-weight: 800; border-radius: 999px; padding: 1px 5px; }
+.pshp { font-size: 9.5px; font-weight: 800; color: #333; white-space: nowrap; }
 .psrow { flex-wrap: nowrap; }
 .phint { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.85); text-shadow: 0 1px 3px rgba(0,60,120,.5); }
 
