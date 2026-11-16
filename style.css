@@ -297,3 +297,5 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 .row:active { filter: brightness(1.06); transform: scale(.995); }
 .toolbar button:active, #backBtn:active, .hpager button:active { transform: scale(.97); }
 #modalBody { color: #14324f; }
+
+.bookovl .bspread { flex: none; margin: auto 0; }
