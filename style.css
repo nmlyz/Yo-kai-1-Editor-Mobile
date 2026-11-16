@@ -370,7 +370,7 @@ input[type="text"], input[type="number"], input[type="password"], input[type="ur
 .rankbtn.cur { background: linear-gradient(180deg, #fff3a0, #ffd83d); border-color: #e0a800; }
 
 /* ===== v58: item grid / yokai rows / history undo ===== */
-.igrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px 2px; padding: 8px 2px; }
+.igrid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px 2px; padding: 8px 2px; }
 .icell { position: relative; background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; }
 .icell img { width: 100%; max-width: 54px; aspect-ratio: 1; object-fit: contain; display: block; margin: 0 auto; filter: drop-shadow(0 2px 2px rgba(0,60,120,.35)); }
 .icell:active img { transform: scale(1.15); }
@@ -617,4 +617,9 @@ body { touch-action: none; }
 .drow { flex: 1 1 0; min-height: 34px; }
 .gchip { white-space: nowrap; font-size: 13.5px; padding: 0 4px; }
 .ykrow { content-visibility: auto; contain-intrinsic-size: auto 62px; }
-.icell { content-visibility: auto; contain-intrinsic-size: auto 86px; }
+
+
+/* v109: sound test grid */
+.sndgrid { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 2px 12px; }
+.sndgrid button { background: rgba(255,255,255,.88); border: 2px solid #57a0d8; color: #1463b4; border-radius: 999px; padding: 7px 10px; font-size: 12px; font-weight: 700; font-family: inherit; cursor: pointer; }
+.sndgrid button:active { transform: scale(.95); }
