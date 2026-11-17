@@ -718,7 +718,7 @@ body[data-girl='1']::before { background-image: url('menu/bg_pink.webp?v=122'); 
 .afrow { display: flex; align-items: center; gap: 8px; padding: 6px 2px; border-bottom: 1px solid rgba(62,110,160,.25); }
 .afrow:last-child { border-bottom: 0; }
 .aflb { flex: 1; font-size: 13px; color: #eaf4ff; line-height: 1.3; }
-.afrow select { width: 108px; flex: none; }
+.afrow select { width: 118px; flex: none; }
 .afht { display: flex; align-items: center; gap: 3px; font-size: 13px; flex: none; }
 .afht input { width: 52px; text-align: center; padding: 6px 4px; }
 .afna { font-size: 12px; color: #8fb8dd; width: 76px; text-align: center; flex: none; }
