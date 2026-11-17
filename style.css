@@ -233,8 +233,8 @@ body { background: repeating-linear-gradient(180deg, rgba(255,255,255,.10) 0 7px
 .lvname.lv2 { color: #1f7ad1; }
 .lvname.lv3 { color: #e79b00; }
 .lvname.lv4 { color: #1a1a1e; }
-#cardNext { color: #5b6b7a; font-size: 11px; margin-top: 2px; }
-#cardNext .cd { color: #e0342b; font-weight: bold; }
+#cardNext { color: #5b6b7a; font-size: 11px; margin-top: 2px; display: flex; align-items: center; flex-wrap: wrap; gap: 1px 6px; }
+#cardNext .cd { color: #e0342b; font-weight: bold; white-space: nowrap; }
 .mcard { border-radius: 16px; padding: 14px 16px; color: #fff; box-shadow: 0 4px 14px rgba(20,50,90,.35); margin-top: 4px; }
 .mcard.lv1 { background: linear-gradient(135deg, #93a3b1, #66798a); }
 .mcard.lv2 { background: linear-gradient(135deg, #2f83d8, #12579f); }
