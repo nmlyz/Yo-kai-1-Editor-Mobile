@@ -205,7 +205,7 @@ a { color: #0a84ff; }
 .mgrid.flip-prev { animation: hflipP .38s ease; }
 @keyframes hflipN { from { transform: perspective(900px) rotateY(-11deg) translateX(16px); opacity: .3; } to { transform: none; opacity: 1; } }
 @keyframes hflipP { from { transform: perspective(900px) rotateY(11deg) translateX(-16px); opacity: .3; } to { transform: none; opacity: 1; } }
-.hpager { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 10px 0 2px; color: #fff; font-weight: 700; font-size: 13px; }
+.hpager { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 10px 0 2px; color: #fff; font-weight: 700; font-size: 13px; flex: none; }
 .hpager button { background: #2c2c30; color: #fff; border: 0; width: 38px; height: 32px; border-radius: 10px; font-size: 14px; cursor: pointer; }
 
 #list.home { display: flex; flex-direction: column; overflow: hidden; }
@@ -225,7 +225,13 @@ body { background: repeating-linear-gradient(180deg, rgba(255,255,255,.10) 0 7px
 #card { background: rgba(255,255,255,.87); border: 2px solid rgba(255,255,255,.95); box-shadow: 0 3px 8px rgba(20,70,120,.22); }
 #cardName { color: #14324f; }
 #cardSub { color: #3c6a99; }
-#cardSub .hearts { font-size: 16px; letter-spacing: 1px; vertical-align: -2px; }
+#cardSub { white-space: nowrap; overflow: hidden; }
+#cardSub .hearts { font-size: 16px; letter-spacing: 1px; vertical-align: -2px; color: #ff3355; }
+.lvname { font-weight: bold; }
+.lvname.lv1 { color: #8496a5; }
+.lvname.lv2 { color: #1f7ad1; }
+.lvname.lv3 { color: #e79b00; }
+.lvname.lv4 { color: #d81b60; }
 #cardSub .hnext { color: #e0342b; font-weight: bold; }
 #moneyPill { background: linear-gradient(180deg, #fff3a0, #ffd83d 60%, #ffc61a); color: #5a3a00; box-shadow: inset 0 2px 0 rgba(255,255,255,.8), 0 2px 4px rgba(20,70,120,.25); }
 #cardMeta button { background: rgba(255,255,255,.88); color: #1d4e79; border: 2px solid rgba(255,255,255,.95); box-shadow: 0 2px 4px rgba(20,70,120,.18); }
