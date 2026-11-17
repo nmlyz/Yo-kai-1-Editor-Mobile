@@ -6,32 +6,57 @@
 <meta name="robots" content="noindex, nofollow">
 <title>管理</title>
 <style>
-  body { font-family: sans-serif; margin: 16px; background: #f2f6fa; color: #14324f; }
-  h1 { font-size: 20px; } h2 { font-size: 16px; margin-top: 28px; }
-  input, select, button { font-size: 15px; padding: 8px; border-radius: 8px; border: 1px solid #9db8cc; }
-  button { background: #1463b4; color: #fff; border: none; font-weight: bold; cursor: pointer; }
-  button.sub { background: #fff; color: #1463b4; border: 2px solid #57a0d8; }
-  button.danger { background: #c0392b; }
-  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 8px 0; }
-  .card { background: #fff; border-radius: 12px; padding: 12px; margin: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
-  .code { font-family: monospace; font-weight: bold; font-size: 17px; }
-  .muted { color: #6b8296; font-size: 13px; }
-  table { border-collapse: collapse; } td { padding: 4px 8px 4px 0; }
-  #msg { color: #c0392b; font-weight: bold; }
+  * { box-sizing: border-box; }
+  body { font-family: "Hiragino Sans", sans-serif; margin: 0; padding: 18px 14px 40px; background: linear-gradient(170deg, #0d1a2a, #132a44 55%, #0d1a2a); color: #eaf4ff; min-height: 100vh; }
+  .wrap { max-width: 560px; margin: 0 auto; }
+  .top { display: flex; align-items: center; gap: 12px; margin: 4px 0 14px; }
+  .top img { width: 54px; height: 54px; border-radius: 14px; box-shadow: 0 3px 10px rgba(0,0,0,.45); }
+  h1 { font-size: 21px; margin: 0; letter-spacing: .04em; }
+  .top .sub { color: #8fb0cc; font-size: 12px; margin-top: 2px; }
+  h2 { font-size: 15px; margin: 26px 0 8px; color: #ffd83d; letter-spacing: .06em; }
+  input, select { font-size: 15px; padding: 9px 11px; border-radius: 10px; border: 1px solid #2e4d6e; background: #0b1727; color: #eaf4ff; font-family: inherit; }
+  input::placeholder { color: #5f7d99; }
+  button { background: linear-gradient(180deg, #ffd83d, #f5b301); color: #402a12; border: none; font-weight: 800; cursor: pointer; font-size: 14px; padding: 9px 14px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,.3); font-family: inherit; }
+  button.sub { background: transparent; color: #3ec6ff; border: 1.5px solid #3ec6ff; box-shadow: none; }
+  button.danger { background: #e5484d; color: #fff; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 9px 0; }
+  .row input { flex: 1; min-width: 110px; }
+  .card { background: linear-gradient(160deg, #1b2f47, #111f31); border: 1px solid #2e4d6e; border-radius: 16px; padding: 14px; margin: 10px 0; box-shadow: 0 4px 14px rgba(4,20,40,.35); }
+  .code { font-family: monospace; font-weight: bold; font-size: 17px; color: #fff; }
+  .muted { color: #8fb0cc; font-size: 13px; }
+  .uhead { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .chip { font-size: 11px; font-weight: 800; padding: 2.5px 9px; border-radius: 999px; color: #fff; background: #8a97a5; }
+  .chip.lv2 { background: #2f7fe0; }
+  .chip.lv3 { background: linear-gradient(120deg, #b8860b, #ffd83d); color: #402a12; }
+  .chip.lv4 { background: #0a0a0e; border: 1px solid #ffd83d; color: #ffd83d; }
+  .hp { font-size: 12px; font-weight: 700; color: #ffb3c1; background: rgba(229,72,77,.16); border: 1px solid rgba(229,72,77,.45); padding: 2px 9px; border-radius: 999px; }
+  .slots { margin: 9px 0 2px 8px; border-left: 2px solid #2e4d6e; padding-left: 10px; }
+  .srow { display: flex; gap: 8px; align-items: center; font-size: 13.5px; padding: 3.5px 0; color: #cfe4f7; }
+  .sname { font-weight: bold; min-width: 52px; color: #fff; }
+  .sval { color: #8fb0cc; }
+  table { border-collapse: collapse; } td { padding: 5px 10px 5px 0; font-size: 14px; color: #cfe4f7; }
+  td input { width: 70px; text-align: center; }
+  #msg { color: #ff9db0; font-weight: bold; margin: 6px 0; }
+  .loginbox input { flex: 1; min-width: 130px; }
 </style>
 </head>
 <body>
-<h1>yw1 管理画面</h1>
-<div class="row">
-  <input id="relay" size="34" value="https://yw1.nmlyz.workers.dev">
-  <input id="pw" type="password" size="16" placeholder="管理者パスワード">
-  <button id="login">ログイン</button>
+<div class="wrap">
+<div class="top"><img src="menu/admin.png" alt=""><div><h1>yw1 管理画面</h1><div class="sub">ADMIN CONSOLE</div></div></div>
+<div class="card loginbox">
+  <div class="row">
+    <input id="relay" value="https://yw1.nmlyz.workers.dev">
+  </div>
+  <div class="row">
+    <input id="pw" type="password" placeholder="管理者パスワード">
+    <button id="login">ログイン</button>
+  </div>
 </div>
 <div id="msg"></div>
 <div id="main" hidden>
   <h2>ユーザー一覧</h2>
   <div class="row"><button class="sub" id="reload">再読み込み</button><span class="muted">ユーザーはアプリを開くと自動でここに表示されます</span></div>
-  <div class="row"><input id="keyq" size="36" placeholder="連携キーを貼り付け"><button class="sub" id="keysearch">キーを検索</button><button class="sub" id="keyall">全員表示</button></div>
+  <div class="row"><input id="keyq" placeholder="連携キーを貼り付け"><button class="sub" id="keysearch">キーを検索</button><button class="sub" id="keyall">全員表示</button></div>
   <div id="users"></div>
   <h2>ハート設定</h2>
   <div class="card" id="cfgBox"></div>
@@ -39,6 +64,7 @@
   <h2>Cloudflare 使用状況（過去24時間）</h2>
   <div class="row"><button class="sub" id="usageBtn">使用状況を取得</button></div>
   <div id="usageBox"></div>
+</div>
 </div>
 <script>
 let PW = '';
@@ -61,9 +87,13 @@ function renderUsers(list, emptyMsg) {
     const d = document.createElement('div');
     d.className = 'card';
     const sel = Object.keys(LEVELS).map(l => `<option value="${l}"${+l === u.level ? ' selected' : ''}>${LEVELS[l]}</option>`).join('');
-    const slotTxt = u.slots ? ['セーブ1', 'セーブ2', 'セーブ3'].map(l => { const sl = u.slots[l] || { hearts: 0, charged: 0 }; return l + ': ' + (u.level >= 3 ? '∞' : sl.hearts) + '（消費確定 ' + sl.charged + '件）'; }).join(' ／ ') : ('ハート: ' + (u.level >= 3 ? '∞' : u.hearts) + ' ／ 消費中: ' + u.charged + '件');
-    d.innerHTML = `<span class="code">${u.name ? esc(u.name) + '（' + u.code + '）' : u.code}</span><br><span class="muted">${slotTxt}</span>
-      <div class="row"><input data-f="name" placeholder="名前" size="12" value="${esc(u.name)}"><input data-f="note" placeholder="備考" size="22" value="${esc(u.note)}"><button class="sub" data-a="info">名前・備考を保存</button></div>
+    const hearts = u.level >= 3 ? '∞' : (u.hearts != null ? u.hearts : (u.slots && u.slots['セーブ1'] && u.slots['セーブ1'].hearts != null ? u.slots['セーブ1'].hearts : '-'));
+    const slots = u.slots
+      ? ['セーブ1', 'セーブ2', 'セーブ3'].map(l => `<div class="srow"><span class="sname">${l}</span><span class="sval">消費確定 ${((u.slots[l] || {}).charged || 0)}件</span></div>`).join('')
+      : `<div class="srow"><span class="sname">セーブ1</span><span class="sval">消費中 ${u.charged || 0}件</span></div>`;
+    d.innerHTML = `<div class="uhead"><span class="code">${u.name ? esc(u.name) + '（' + u.code + '）' : u.code}</span><span class="chip lv${u.level}">${LEVELS[u.level] || 'ノーマル'}</span><span class="hp">❤️ ${hearts}</span></div>
+      <div class="slots">${slots}</div>
+      <div class="row"><input data-f="name" placeholder="名前" value="${esc(u.name)}"><input data-f="note" placeholder="備考" value="${esc(u.note)}"><button class="sub" data-a="info">名前・備考を保存</button></div>
       <div class="row"><select data-f="lv">${sel}</select>
       <button data-a="set">レベル変更</button>
       <button class="sub" data-a="heal">ハート全回復</button>
@@ -82,12 +112,12 @@ async function load() {
   renderUsers(USERS, 'まだユーザーがいません');
   const c = $('cfgBox');
   let html = '<table>';
-  html += `<tr><td>ハート上限（ノーマル）</td><td><input id="cap1" type="number" min="0" max="99" value="${cfg.caps[1]}" size="4"></td></tr>`;
-  html += `<tr><td>ハート上限（メンバー）</td><td><input id="cap2" type="number" min="0" max="99" value="${cfg.caps[2]}" size="4"></td></tr>`;
-  html += `<tr><td>回復（ノーマル・分に1個）</td><td><input id="rg1" type="number" min="1" max="60" value="${cfg.regenMin[1]}" size="4"></td></tr>`;
-  html += `<tr><td>回復（メンバー・分に1個）</td><td><input id="rg2" type="number" min="1" max="60" value="${cfg.regenMin[2]}" size="4"></td></tr>`;
+  html += `<tr><td>ハート上限（ノーマル）</td><td><input id="cap1" type="number" min="0" max="99" value="${cfg.caps[1]}"></td></tr>`;
+  html += `<tr><td>ハート上限（メンバー）</td><td><input id="cap2" type="number" min="0" max="99" value="${cfg.caps[2]}"></td></tr>`;
+  html += `<tr><td>回復（ノーマル・分に1個）</td><td><input id="rg1" type="number" min="1" max="60" value="${cfg.regenMin[1]}"></td></tr>`;
+  html += `<tr><td>回復（メンバー・分に1個）</td><td><input id="rg2" type="number" min="1" max="60" value="${cfg.regenMin[2]}"></td></tr>`;
   html += '</table><table>';
-  for (const k of Object.keys(ACTIONS)) html += `<tr><td>${ACTIONS[k]}</td><td><input id="cost_${k}" type="number" min="0" max="99" value="${cfg.costs[k]}" size="4"></td></tr>`;
+  for (const k of Object.keys(ACTIONS)) html += `<tr><td>${ACTIONS[k]}</td><td><input id="cost_${k}" type="number" min="0" max="99" value="${cfg.costs[k]}"></td></tr>`;
   html += '</table>';
   c.innerHTML = html;
   $('main').hidden = false;
