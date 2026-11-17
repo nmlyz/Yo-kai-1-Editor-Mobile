@@ -603,7 +603,7 @@ body { touch-action: none; }
 
 /* v106: fixed device geometry - render at the phone size on every screen */
 #app { max-width: 402px; }
-#list.home .mgrid { flex: none; grid-template-rows: repeat(3, 104px); }
+#list.home .mgrid { flex: 1 1 auto; min-height: 0; grid-template-rows: repeat(3, minmax(0, 1fr)); }
 .pstage { width: min(96vw, 386px); }
 @media (min-width: 620px) {
   #app { max-width: 402px; }
