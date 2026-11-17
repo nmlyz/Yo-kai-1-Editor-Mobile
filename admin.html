@@ -14,13 +14,13 @@
   h1 { font-size: 21px; margin: 0; letter-spacing: .04em; }
   .top .sub { color: #8fb0cc; font-size: 12px; margin-top: 2px; }
   h2 { font-size: 15px; margin: 26px 0 8px; color: #ffd83d; letter-spacing: .06em; }
-  input, select { font-size: 15px; padding: 9px 11px; border-radius: 10px; border: 1px solid #2e4d6e; background: #0b1727; color: #eaf4ff; font-family: inherit; }
+  input { font-size: 15px; padding: 9px 11px; border-radius: 10px; border: 1px solid #2e4d6e; background: #0b1727; color: #eaf4ff; font-family: inherit; }
   input::placeholder { color: #5f7d99; }
   button { background: linear-gradient(180deg, #ffd83d, #f5b301); color: #402a12; border: none; font-weight: 800; cursor: pointer; font-size: 14px; padding: 9px 14px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,.3); font-family: inherit; }
   button.sub { background: transparent; color: #3ec6ff; border: 1.5px solid #3ec6ff; box-shadow: none; }
-  button.danger { background: #e5484d; color: #fff; }
+  button:disabled { opacity: .45; cursor: default; box-shadow: none; }
   .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 9px 0; }
-  .row input { flex: 1; min-width: 110px; }
+  .row input { flex: 1; min-width: 130px; }
   .card { background: linear-gradient(160deg, #1b2f47, #111f31); border: 1px solid #2e4d6e; border-radius: 16px; padding: 14px; margin: 10px 0; box-shadow: 0 4px 14px rgba(4,20,40,.35); }
   .code { font-family: monospace; font-weight: bold; font-size: 17px; color: #fff; }
   .muted { color: #8fb0cc; font-size: 13px; }
@@ -29,21 +29,14 @@
   .chip.lv2 { background: #2f7fe0; }
   .chip.lv3 { background: linear-gradient(120deg, #b8860b, #ffd83d); color: #402a12; }
   .chip.lv4 { background: #0a0a0e; border: 1px solid #ffd83d; color: #ffd83d; }
-  .hp { font-size: 12px; font-weight: 700; color: #ffb3c1; background: rgba(229,72,77,.16); border: 1px solid rgba(229,72,77,.45); padding: 2px 9px; border-radius: 999px; }
-  .slots { margin: 9px 0 2px 8px; border-left: 2px solid #2e4d6e; padding-left: 10px; }
-  .srow { display: flex; gap: 8px; align-items: center; font-size: 13.5px; padding: 3.5px 0; color: #cfe4f7; }
-  .sname { font-weight: bold; min-width: 52px; color: #fff; }
-  .sval { color: #8fb0cc; }
-  table { border-collapse: collapse; } td { padding: 5px 10px 5px 0; font-size: 14px; color: #cfe4f7; }
-  td input { width: 70px; text-align: center; }
+  .spacer { flex: 1; }
   #msg { color: #ff9db0; font-weight: bold; margin: 6px 0; }
-  .loginbox input { flex: 1; min-width: 130px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="top"><img src="menu/admin.png" alt=""><div><h1>yw1 管理画面</h1><div class="sub">ADMIN CONSOLE</div></div></div>
-<div class="card loginbox">
+<div class="top"><img src="menu/admin.png" alt=""><div><h1>yw1 管理者付与</h1><div class="sub">ADMIN GRANT</div></div></div>
+<div class="card">
   <div class="row">
     <input id="relay" value="https://yw1.nmlyz.workers.dev">
   </div>
@@ -56,21 +49,13 @@
 <div id="main" hidden>
   <h2>ユーザー一覧</h2>
   <div class="row"><button class="sub" id="reload">再読み込み</button><span class="muted">ユーザーはアプリを開くと自動でここに表示されます</span></div>
-  <div class="row"><input id="keyq" placeholder="連携キーを貼り付け"><button class="sub" id="keysearch">キーを検索</button><button class="sub" id="keyall">全員表示</button></div>
   <div id="users"></div>
-  <h2>ハート設定</h2>
-  <div class="card" id="cfgBox"></div>
-  <div class="row"><button id="saveCfg">設定を保存</button></div>
-  <h2>Cloudflare 使用状況（過去24時間）</h2>
-  <div class="row"><button class="sub" id="usageBtn">使用状況を取得</button></div>
-  <div id="usageBox"></div>
 </div>
 </div>
 <script>
 let PW = '';
 const $ = id => document.getElementById(id);
 const LEVELS = { 1: 'ノーマル', 2: 'メンバー', 3: 'プレミアム', 4: '管理者' };
-const ACTIONS = { equip: '装備変更', quest: 'クエスト系の個別切替', dex: '大辞典の登録オンオフ', item: 'もちもの個数変更', itemadd: 'アイテム追加', money: '所持金', pname: 'プレイヤー名', level: 'レベル変更', yokaiadd: '妖怪の追加', species: '種族変更', watchrank: 'ウォッチランク', ptime: 'プレイ時間・日記日時' };
 async function api(op, extra) {
   const r = await fetch($('relay').value.replace(/\/$/, '') + '/__admin', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pw: PW, op, ...extra }) });
   const j = await r.json();
@@ -79,79 +64,26 @@ async function api(op, extra) {
 }
 function msg(t) { $('msg').textContent = t || ''; }
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
-let USERS = [];
-function renderUsers(list, emptyMsg) {
+function renderUsers(list) {
   const box = $('users');
-  box.innerHTML = list.length ? '' : `<div class="muted">${emptyMsg}</div>`;
+  box.innerHTML = list.length ? '' : '<div class="muted">まだユーザーがいません</div>';
   for (const u of list) {
     const d = document.createElement('div');
     d.className = 'card';
-    const sel = Object.keys(LEVELS).map(l => `<option value="${l}"${+l === u.level ? ' selected' : ''}>${LEVELS[l]}</option>`).join('');
-    const hearts = u.level >= 3 ? '∞' : (u.hearts != null ? u.hearts : (u.slots && u.slots['セーブ1'] && u.slots['セーブ1'].hearts != null ? u.slots['セーブ1'].hearts : '-'));
-    const slots = u.slots
-      ? ['セーブ1', 'セーブ2', 'セーブ3'].map(l => `<div class="srow"><span class="sname">${l}</span><span class="sval">消費確定 ${((u.slots[l] || {}).charged || 0)}件</span></div>`).join('')
-      : `<div class="srow"><span class="sname">セーブ1</span><span class="sval">消費中 ${u.charged || 0}件</span></div>`;
-    d.innerHTML = `<div class="uhead"><span class="code">${u.name ? esc(u.name) + '（' + u.code + '）' : u.code}</span><span class="chip lv${u.level}">${LEVELS[u.level] || 'ノーマル'}</span><span class="hp">❤️ ${hearts}</span></div>
-      <div class="slots">${slots}</div>
-      <div class="row"><input data-f="name" placeholder="名前" value="${esc(u.name)}"><input data-f="note" placeholder="備考" value="${esc(u.note)}"><button class="sub" data-a="info">名前・備考を保存</button></div>
-      <div class="row"><select data-f="lv">${sel}</select>
-      <button data-a="set">レベル変更</button>
-      <button class="sub" data-a="heal">ハート全回復</button>
-      <button class="danger" data-a="del">削除</button></div>`;
-    d.querySelector('[data-a="info"]').onclick = async () => { await api('setInfo', { uid: u.uid, name: d.querySelector('[data-f="name"]').value, note: d.querySelector('[data-f="note"]').value }); msg('保存しました'); load(); };
-    d.querySelector('[data-a="set"]').onclick = async () => { await api('setLevel', { uid: u.uid, level: +d.querySelector('[data-f="lv"]').value }); msg('変更しました'); load(); };
-    d.querySelector('[data-a="heal"]').onclick = async () => { await api('setLevel', { uid: u.uid, level: u.level, resetHearts: 1 }); msg('回復しました'); load(); };
-    d.querySelector('[data-a="del"]').onclick = async () => { if (confirm(u.code + ' を削除しますか？')) { await api('remove', { uid: u.uid }); load(); } };
+    d.innerHTML = `<div class="uhead"><span class="code">${u.name ? esc(u.name) + '（' + u.code + '）' : u.code}</span><span class="chip lv${u.level}">${LEVELS[u.level] || 'ノーマル'}</span><span class="spacer"></span>${u.level >= 4 ? '<span class="muted">付与済み</span>' : '<button data-a="grant">管理者にする</button>'}</div>`;
+    const b = d.querySelector('[data-a="grant"]');
+    if (b) b.onclick = async () => { if (confirm(u.code + ' に管理者権限を付与しますか？')) { try { await api('setLevel', { uid: u.uid, level: 4 }); msg('付与しました'); load(); } catch (e) { msg(e.message); } } };
     box.appendChild(d);
   }
 }
 async function load() {
   msg('');
-  const { users, cfg } = await api('list');
-  USERS = users;
-  renderUsers(USERS, 'まだユーザーがいません');
-  const c = $('cfgBox');
-  let html = '<table>';
-  html += `<tr><td>ハート上限（ノーマル）</td><td><input id="cap1" type="number" min="0" max="99" value="${cfg.caps[1]}"></td></tr>`;
-  html += `<tr><td>ハート上限（メンバー）</td><td><input id="cap2" type="number" min="0" max="99" value="${cfg.caps[2]}"></td></tr>`;
-  html += `<tr><td>回復（ノーマル・分に1個）</td><td><input id="rg1" type="number" min="1" max="60" value="${cfg.regenMin[1]}"></td></tr>`;
-  html += `<tr><td>回復（メンバー・分に1個）</td><td><input id="rg2" type="number" min="1" max="60" value="${cfg.regenMin[2]}"></td></tr>`;
-  html += '</table><table>';
-  for (const k of Object.keys(ACTIONS)) html += `<tr><td>${ACTIONS[k]}</td><td><input id="cost_${k}" type="number" min="0" max="99" value="${cfg.costs[k]}"></td></tr>`;
-  html += '</table>';
-  c.innerHTML = html;
+  const { users } = await api('list');
+  renderUsers(users);
   $('main').hidden = false;
 }
 $('login').onclick = async () => { PW = $('pw').value; try { await load(); } catch (e) { msg('ログイン失敗: ' + e.message); } };
 $('reload').onclick = () => load().catch(e => msg(e.message));
-$('keysearch').onclick = () => { const q = $('keyq').value.trim().toLowerCase().replace(/\s+/g, ''); if (!q) { renderUsers(USERS, 'まだユーザーがいません'); return; } renderUsers(USERS.filter(u => u.uid === q || u.code.toLowerCase() === q || u.uid.indexOf(q) === 0), 'そのキーのユーザーは見つかりません'); };
-$('keyall').onclick = () => { $('keyq').value = ''; renderUsers(USERS, 'まだユーザーがいません'); };
-$('usageBtn').onclick = async () => {
-  const box = $('usageBox');
-  box.innerHTML = '<div class="muted">取得中…</div>';
-  try {
-    const u = await api('usage');
-    box.innerHTML = `<div class="card"><table>
-      <tr><td>Worker リクエスト</td><td>${u.workers.requests} 回（エラー ${u.workers.errors}）／ 無料枠 100,000回/日</td></tr>
-      <tr><td>KV 読み取り</td><td>${u.kvOps.read || 0} 回 ／ 100,000回/日</td></tr>
-      <tr><td>KV 書き込み</td><td>${u.kvOps.write || 0} 回 ／ 1,000回/日</td></tr>
-      <tr><td>KV 削除</td><td>${u.kvOps.delete || 0} 回 ／ 1,000回/日</td></tr>
-      <tr><td>KV リスト</td><td>${u.kvOps.list || 0} 回 ／ 1,000回/日</td></tr>
-      <tr><td>KV ストレージ</td><td>${(u.storage.bytes / 1024).toFixed(1)} KB（${u.storage.objects} 件）／ 1GB</td></tr>
-    </table></div>`;
-  } catch (e) {
-    box.innerHTML = e.message === 'not_configured'
-      ? '<div class="card">未設定です。Cloudflare で API トークンを作成（権限: アカウント分析の読み取り、Workers KV の読み取り、Workers スクリプトの読み取り）し、Worker の「設定 → ランタイム変数とシークレット」にシークレット <b>CF_API_TOKEN</b> と変数 <b>CF_ACCOUNT_ID</b>（アカウントID）を追加してください。アカウントIDはダッシュボードの URL に含まれています。</div>'
-      : '<div class="card">取得失敗: ' + esc(e.message) + '</div>';
-  }
-};
-$('saveCfg').onclick = async () => {
-  const clamp = (v, lo, hi, def) => { const n = parseInt(v, 10); return isNaN(n) ? def : Math.max(lo, Math.min(hi, n)); };
-  const costs = {};
-  for (const k of Object.keys(ACTIONS)) costs[k] = clamp($('cost_' + k).value, 0, 99, 0);
-  const cfg = { caps: { 1: clamp($('cap1').value, 0, 99, 3), 2: clamp($('cap2').value, 0, 99, 5) }, regenMin: { 1: clamp($('rg1').value, 1, 60, 30), 2: clamp($('rg2').value, 1, 60, 20) }, costs };
-  try { await api('setCfg', { cfg }); msg('設定を保存しました'); } catch (e) { msg(e.message); }
-};
 </script>
 </body>
 </html>
