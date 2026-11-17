@@ -61,7 +61,8 @@ function renderUsers(list, emptyMsg) {
     const d = document.createElement('div');
     d.className = 'card';
     const sel = Object.keys(LEVELS).map(l => `<option value="${l}"${+l === u.level ? ' selected' : ''}>${LEVELS[l]}</option>`).join('');
-    d.innerHTML = `<span class="code">${u.name ? esc(u.name) + '（' + u.code + '）' : u.code}</span> <span class="muted">ハート: ${u.level >= 3 ? '∞' : u.hearts} ／ 消費中: ${u.charged}件</span>
+    const slotTxt = u.slots ? ['セーブ1', 'セーブ2', 'セーブ3'].map(l => { const sl = u.slots[l] || { hearts: 0, charged: 0 }; return l + ': ' + (u.level >= 3 ? '∞' : sl.hearts) + '（消費確定 ' + sl.charged + '件）'; }).join(' ／ ') : ('ハート: ' + (u.level >= 3 ? '∞' : u.hearts) + ' ／ 消費中: ' + u.charged + '件');
+    d.innerHTML = `<span class="code">${u.name ? esc(u.name) + '（' + u.code + '）' : u.code}</span><br><span class="muted">${slotTxt}</span>
       <div class="row"><input data-f="name" placeholder="名前" size="12" value="${esc(u.name)}"><input data-f="note" placeholder="備考" size="22" value="${esc(u.note)}"><button class="sub" data-a="info">名前・備考を保存</button></div>
       <div class="row"><select data-f="lv">${sel}</select>
       <button data-a="set">レベル変更</button>
