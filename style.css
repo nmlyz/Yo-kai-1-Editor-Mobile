@@ -214,6 +214,7 @@ a { color: #0a84ff; }
 #list.home .mtile { height: 100%; min-height: 0; }
 #list.home .mtimg { height: 100%; }
 #list.home .mtimg img { height: 100%; aspect-ratio: auto; object-fit: cover; }
+#list.home .mtimg.medalt img { object-position: 50% 10%; }
 #list.home .mtempty { aspect-ratio: auto; height: 100%; }
 
 /* ===== game theme (v41) ===== */
